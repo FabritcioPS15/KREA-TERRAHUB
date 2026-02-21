@@ -14,7 +14,7 @@ export default function Home() {
             className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
             style={{
               backgroundImage:
-                'url(https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)',
+                'url(https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2&fm=webp)',
             }}
           />
           {/* Overlay color - Gradiente sutil para permitir ver parte de la imagen */}
@@ -46,7 +46,7 @@ export default function Home() {
             className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
             style={{
               backgroundImage:
-                'url(https://images.pexels.com/photos/4022090/pexels-photo-4022090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)',
+                'url(https://images.pexels.com/photos/4022090/pexels-photo-4022090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2&fm=webp)',
             }}
           />
           {/* Overlay color - Gradiente sutil para permitir ver parte de la imagen */}

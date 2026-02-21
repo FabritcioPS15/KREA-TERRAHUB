@@ -10,7 +10,7 @@ const services = [
     description:
       'Construcción y diseño de estructuras en drywall para espacios modernos y funcionales con acabados de primera calidad.',
     icon: FaBuilding,
-    image: 'https://images.pexels.com/photos/5767925/pexels-photo-5767925.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/5767925/pexels-photo-5767925.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const services = [
     description:
       'Diseño y fabricación de muebles personalizados en melamina, adaptados a tus necesidades y espacios específicos.',
     icon: FaTools,
-    image: 'https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const services = [
     description:
       'Servicios completos de instalaciones eléctricas residenciales y comerciales con estándares de seguridad certificados.',
     icon: FaBolt,
-    image: 'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const services = [
     description:
       'Instalación y mantenimiento de sistemas de gasfitería, agua y saneamiento con garantía y profesionalismo.',
     icon: FaTint,
-    image: 'https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
   },
 ];
 
@@ -85,6 +85,7 @@ export default function Services() {
                   <img
                     src={service.image}
                     alt={service.title}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-blue-900 opacity-20 group-hover:opacity-10 transition-opacity" />

@@ -9,7 +9,7 @@ export default function About() {
         className="relative py-20 bg-cover bg-center"
         style={{
           backgroundImage:
-            'url(https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)',
+            'url(https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2&fm=webp)',
         }}
       >
         <div className="absolute inset-0 bg-slate-950/60" />

@@ -9,28 +9,28 @@ const products = [
     name: 'Cacao Orgánico',
     price: '$25.00',
     description: 'Cacao orgánico de origen certificado, cultivado de manera sostenible en nuestras tierras.',
-    image: 'https://images.pexels.com/photos/4022090/pexels-photo-4022090.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/4022090/pexels-photo-4022090.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
   },
   {
     id: 2,
     name: 'Chocolate Artesanal',
     price: '$35.00',
     description: 'Chocolate premium elaborado artesanalmente con cacao de primera calidad.',
-    image: 'https://images.pexels.com/photos/918327/pexels-photo-918327.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/918327/pexels-photo-918327.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
   },
   {
     id: 3,
     name: 'Café de Altura',
     price: '$28.00',
     description: 'Café de altura seleccionado, tostado y empacado con los más altos estándares de calidad.',
-    image: 'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
   },
   {
     id: 4,
     name: 'Aceites Naturales',
     price: '$30.00',
     description: 'Aceites naturales extraídos de productos orgánicos, ideales para uso culinario y cosmético.',
-    image: 'https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=600&fm=webp',
   },
 ];
 
@@ -81,6 +81,7 @@ export default function Products() {
                   <img
                     src={product.image}
                     alt={product.name}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-green-900 opacity-20 group-hover:opacity-10 transition-opacity" />

@@ -14,6 +14,7 @@ export default function Footer() {
                 <img
                   src="/assets/logo.png"
                   alt="KREA & TERRA HUB S.A.C."
+                  loading="lazy"
                   className="h-full object-contain drop-shadow-sm"
                 />
               </div>

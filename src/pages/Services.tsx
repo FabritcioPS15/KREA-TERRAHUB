@@ -6,6 +6,7 @@ import FadeIn from '../components/FadeIn';
 const services = [
   {
     id: 1,
+    slug: 'drywall-estructuras',
     title: 'Drywall & Estructuras',
     description:
       'Construcción y diseño de estructuras en drywall para espacios modernos y funcionales con acabados de primera calidad.',
@@ -14,6 +15,7 @@ const services = [
   },
   {
     id: 2,
+    slug: 'melamina-muebles',
     title: 'Melamina y Muebles',
     description:
       'Diseño y fabricación de muebles personalizados en melamina, adaptados a tus necesidades y espacios específicos.',
@@ -22,6 +24,7 @@ const services = [
   },
   {
     id: 3,
+    slug: 'instalaciones-electricas',
     title: 'Instalaciones Eléctricas',
     description:
       'Servicios completos de instalaciones eléctricas residenciales y comerciales con estándares de seguridad certificados.',
@@ -30,6 +33,7 @@ const services = [
   },
   {
     id: 4,
+    slug: 'gasfiteria-saneamiento',
     title: 'Gasfitería y Saneamiento',
     description:
       'Instalación y mantenimiento de sistemas de gasfitería, agua y saneamiento con garantía y profesionalismo.',
@@ -98,9 +102,18 @@ export default function Services() {
                   </div>
                   <h3 className="text-xl font-bold text-gray-800 mb-3">{service.title}</h3>
                   <p className="text-gray-600 text-sm mb-6 leading-relaxed">{service.description}</p>
-                  <button className="w-full px-6 py-3 bg-slate-900 text-white rounded-md hover:bg-green-700 transition-all duration-300 font-medium text-sm tracking-wide">
-                    Solicitar Cotización
-                  </button>
+                  <div className="flex flex-col gap-3">
+                    <Link
+                      to={`/servicios/${service.slug}`}
+                      className="w-full px-6 py-3 bg-white border border-slate-900 text-slate-900 rounded-md hover:bg-slate-50 transition-all duration-300 font-medium text-sm tracking-wide flex items-center justify-center gap-1 group/btn"
+                    >
+                      Conoce más
+                      <FiChevronRight className="group-hover/btn:translate-x-1 transition-transform" />
+                    </Link>
+                    <button className="w-full px-6 py-3 bg-slate-900 text-white rounded-md hover:bg-slate-800 transition-all duration-300 font-medium text-sm tracking-wide">
+                      Solicitar Cotización
+                    </button>
+                  </div>
                 </div>
               </FadeIn>
             ))}

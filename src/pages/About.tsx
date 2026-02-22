@@ -144,13 +144,13 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-24 bg-slate-950 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-green-900/20 opacity-50" />
+      <section className="py-24 bg-white text-black relative overflow-hidden">
+        <div className="absolute inset-0  opacity-50" />
         <div className="container mx-auto px-6 text-center relative z-10">
           <FadeIn direction="up">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light mb-8 leading-tight">Nuestro <span className="italic font-semibold text-blue-400">Propósito</span></h2>
-            <p className="text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-light text-slate-300 px-2">
-              Ser el puente que conecta la <span className="text-white font-medium">construcción de espacios</span> con la producción de <span className="text-white font-medium">alimentos naturales</span>, creando un ecosistema empresarial sostenible que genera impacto positivo real.
+            <p className="text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-light text-black px-2">
+              Ser el puente que conecta la <span className="text-blue-400 font-medium">construcción de espacios</span> con la producción de <span className="text-green-400 font-medium">alimentos naturales</span>, creando un ecosistema empresarial sostenible que genera impacto positivo real.
             </p>
           </FadeIn>
         </div>

@@ -9,6 +9,7 @@ const Services = lazy(() => import('./pages/Services'));
 const Products = lazy(() => import('./pages/Products'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
+const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
 
 // Componente de carga simple
 const PageLoader = () => (
@@ -38,6 +39,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/servicios" element={<Services />} />
+              <Route path="/servicios/:slug" element={<ServiceDetail />} />
               <Route path="/productos" element={<Products />} />
               <Route path="/nosotros" element={<About />} />
               <Route path="/contacto" element={<Contact />} />

@@ -22,7 +22,7 @@ const WhatsAppButton = () => {
 
     const handleClick = () => {
         // Reemplaza con tu número de WhatsApp real y mensaje predeterminado
-        const phoneNumber = '51987654321'; // Ejemplo para Perú
+        const phoneNumber = '51958077827'; // Ejemplo para Perú
         const message = encodeURIComponent('Hola, me gustaría solicitar una cotización para sus servicios.');
         window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
     };

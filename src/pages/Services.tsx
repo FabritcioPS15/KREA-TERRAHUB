@@ -2,6 +2,7 @@ import { FaBolt, FaBuilding, FaTint, FaTools, FaProjectDiagram, FaDraftingCompas
 import { Link } from 'react-router-dom';
 import { FiHome, FiChevronRight } from 'react-icons/fi';
 import FadeIn from '../components/FadeIn';
+import Counter from '../components/Counter';
 
 const services = [
   {
@@ -104,8 +105,8 @@ export default function Services() {
 
           <FadeIn direction="up" delay={0.2} className="text-center px-4">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 tracking-tight leading-tight">
-              SOLUCIONES <span className="text-blue-400 italic font-light">CONSTRUCTIVAS</span>
-              <br className="hidden sm:block" /> Y MANTENIMIENTO
+              INFRAESTRUCTURA Y<span className="text-blue-400 italic font-light">ACABADOS</span>
+              <br className="hidden sm:block" /> DE EXCELENCIA
             </h1>
           </FadeIn>
         </div>
@@ -170,15 +171,21 @@ export default function Services() {
             </FadeIn>
             <div className="grid md:grid-cols-3 gap-8 mt-12">
               <FadeIn direction="up" delay={0.1} className="text-center">
-                <div className="text-4xl font-bold text-blue-900 mb-2">500+</div>
+                <div className="text-4xl font-bold text-blue-900 mb-2">
+                  <Counter value={500} suffix="+" />
+                </div>
                 <div className="text-gray-600">Proyectos Completados</div>
               </FadeIn>
               <FadeIn direction="up" delay={0.2} className="text-center">
-                <div className="text-4xl font-bold text-blue-900 mb-2">15+</div>
+                <div className="text-4xl font-bold text-blue-900 mb-2">
+                  <Counter value={15} suffix="+" />
+                </div>
                 <div className="text-gray-600">Años de Experiencia</div>
               </FadeIn>
               <FadeIn direction="up" delay={0.3} className="text-center">
-                <div className="text-4xl font-bold text-blue-900 mb-2">100%</div>
+                <div className="text-4xl font-bold text-blue-900 mb-2">
+                  <Counter value={100} suffix="%" />
+                </div>
                 <div className="text-gray-600">Clientes Satisfechos</div>
               </FadeIn>
             </div>

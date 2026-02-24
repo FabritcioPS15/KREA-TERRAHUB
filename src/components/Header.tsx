@@ -238,24 +238,32 @@ export default function Header() {
               <div className="absolute bottom-[-10%] left-[-10%] w-[60%] h-[50%] bg-green-900/40 blur-[120px] rounded-full" />
             </div>
 
-            <nav className="relative min-h-screen flex flex-col p-6 pt-20">
-              {/* Botón de Cierre Superior Derecha */}
-              <button
-                className="absolute top-5 right-6 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:text-white transition-all duration-300"
-                onClick={closeMenu}
-                aria-label="Close menu"
-              >
-                <FiX size={28} />
-              </button>
+            <nav className="relative min-h-screen flex flex-col p-6 pt-16">
+              {/* Logo y Botón de Cierre */}
+              <div className="flex items-center justify-between mb-8">
+                <Link to="/" className="flex items-center" onClick={closeMenu}>
+                  <div className="flex items-center px-4 py-2 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
+                    <img src="/assets/logo.png" alt="Logo" className="h-8 w-auto object-contain" />
+                    <span className="ml-2 font-bold text-xs bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent uppercase tracking-tight">KREA & TERRA HUB</span>
+                  </div>
+                </Link>
+                <button
+                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:text-white transition-all duration-300"
+                  onClick={closeMenu}
+                  aria-label="Close menu"
+                >
+                  <FiX size={24} />
+                </button>
+              </div>
 
               <div className="container mx-auto max-w-lg">
-                <div className="space-y-1 mb-6">
+                <div className="space-y-0.5 mb-4">
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 }}
                   >
-                    <span className="text-[10px] font-bold text-blue-400 uppercase tracking-[0.3em] mb-4 block px-4 opacity-70">
+                    <span className="text-[9px] font-bold text-blue-400 uppercase tracking-[0.3em] mb-3 block px-4 opacity-70">
                       Navegación
                     </span>
                   </motion.div>
@@ -278,19 +286,19 @@ export default function Header() {
                       <Link
                         to={item.to}
                         onClick={closeMenu}
-                        className={`group relative flex items-center justify-between py-3 px-4 rounded-xl transition-all duration-300 ${isActive(item.to)
+                        className={`group relative flex items-center justify-between py-2 px-4 rounded-xl transition-all duration-300 ${isActive(item.to)
                           ? 'bg-white/10 border border-white/10 shadow-lg'
                           : 'hover:bg-white/5 border border-transparent hover:border-white/5'
                           }`}
                       >
                         <div className="flex items-center gap-4">
-                          <div className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300 ${isActive(item.to)
+                          <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${isActive(item.to)
                             ? item.color === 'green' ? 'bg-green-600 text-white' : 'bg-blue-600 text-white'
                             : 'bg-white/5 text-white/40 group-hover:text-white/70 group-hover:bg-white/10'
                             }`}>
-                            <item.icon size={18} />
+                            <item.icon size={16} />
                           </div>
-                          <span className={`text-lg font-medium tracking-tight transition-all duration-300 ${isActive(item.to) ? 'text-white' : 'text-white/60 group-hover:text-white'
+                          <span className={`text-base font-medium tracking-tight transition-all duration-300 ${isActive(item.to) ? 'text-white' : 'text-white/60 group-hover:text-white'
                             }`}>
                             {item.label}
                           </span>
@@ -309,37 +317,37 @@ export default function Header() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.55 }}
-                  className="pt-6 border-t border-white/10 mt-4"
+                  className="pt-4 border-t border-white/10 mt-2"
                 >
-                  <div className="grid grid-cols-1 gap-6">
+                  <div className="grid grid-cols-1 gap-4">
                     <div>
-                      <span className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] mb-3 block px-4">Conexión</span>
-                      <div className="flex flex-col gap-3">
-                        <a href="tel:+516802256956" className="flex items-center gap-4 text-white/70 hover:text-white font-medium p-3 bg-white/5 rounded-xl border border-transparent hover:border-white/10 transition-all duration-300">
-                          <div className="w-9 h-9 rounded-lg bg-blue-900/40 flex items-center justify-center text-blue-300">
-                            <FiPhone size={18} />
+                      <span className="text-[9px] font-bold text-white/30 uppercase tracking-[0.2em] mb-2 block px-4">Conexión</span>
+                      <div className="flex flex-col gap-2">
+                        <a href="tel:+516802256956" className="flex items-center gap-4 text-white/70 hover:text-white font-medium p-2.5 bg-white/5 rounded-xl border border-transparent hover:border-white/10 transition-all duration-300">
+                          <div className="w-8 h-8 rounded-lg bg-blue-900/40 flex items-center justify-center text-blue-300">
+                            <FiPhone size={16} />
                           </div>
                           <div className="flex flex-col">
-                            <span className="text-[8px] uppercase tracking-widest text-white/30 font-bold">Central</span>
-                            <span className="text-sm">(680) 225-6956</span>
+                            <span className="text-[7px] uppercase tracking-widest text-white/30 font-bold">Central</span>
+                            <span className="text-xs">(680) 225-6956</span>
                           </div>
                         </a>
-                        <a href="mailto:krea@terrahub.com" className="flex items-center gap-4 text-white/70 hover:text-white font-medium p-3 bg-white/5 rounded-xl border border-transparent hover:border-white/10 transition-all duration-300">
-                          <div className="w-9 h-9 rounded-lg bg-blue-900/40 flex items-center justify-center text-blue-300">
-                            <FiMail size={18} />
+                        <a href="mailto:krea@terrahub.com" className="flex items-center gap-4 text-white/70 hover:text-white font-medium p-2.5 bg-white/5 rounded-xl border border-transparent hover:border-white/10 transition-all duration-300">
+                          <div className="w-8 h-8 rounded-lg bg-blue-900/40 flex items-center justify-center text-blue-300">
+                            <FiMail size={16} />
                           </div>
                           <div className="flex flex-col">
-                            <span className="text-[8px] uppercase tracking-widest text-white/30 font-bold">Email</span>
-                            <span className="text-sm">krea@terrahub.com</span>
+                            <span className="text-[7px] uppercase tracking-widest text-white/30 font-bold">Email</span>
+                            <span className="text-xs">krea@terrahub.com</span>
                           </div>
                         </a>
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-center gap-6 py-2">
-                      <a href="#" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-blue-600/20 hover:border-blue-500/30 transition-all duration-300"><FaFacebookF size={18} /></a>
-                      <a href="#" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-pink-600/20 hover:border-pink-500/30 transition-all duration-300"><FaInstagram size={18} /></a>
-                      <a href="#" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-red-600/20 hover:border-red-500/30 transition-all duration-300"><FaYoutube size={18} /></a>
+                    <div className="flex items-center justify-center gap-5 py-1">
+                      <a href="#" className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-blue-600/20 hover:border-blue-500/30 transition-all duration-300"><FaFacebookF size={16} /></a>
+                      <a href="#" className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-pink-600/20 hover:border-pink-500/30 transition-all duration-300"><FaInstagram size={16} /></a>
+                      <a href="#" className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-red-600/20 hover:border-red-500/30 transition-all duration-300"><FaYoutube size={16} /></a>
                     </div>
                   </div>
                 </motion.div>

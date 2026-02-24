@@ -120,9 +120,6 @@ export default function Header() {
                 <span className="font-bold text-[13px] sm:text-base leading-none bg-gradient-to-r from-blue-900 to-green-600 bg-clip-text text-transparent uppercase tracking-tight">
                   KREA & TERRA HUB
                 </span>
-                <span className="text-[9px] sm:text-[10px] font-medium text-gray-500 leading-tight ml-1.5 translate-y-[0.5px]">
-                  S.A.C.
-                </span>
               </div>
             </div>
           </Link>
@@ -173,7 +170,25 @@ export default function Header() {
                 }}
                 className={desktopLinkClass('/productos', 'green')}
               >
-                Productos (Terra)
+                Producto (Terra)
+              </Link>
+              <Link
+                to="/portafolio"
+                ref={(el) => {
+                  linkRefs.current['/portafolio'] = el;
+                }}
+                className={desktopLinkClass('/portafolio', 'blue')}
+              >
+                Portafolio
+              </Link>
+              <Link
+                to="/blog"
+                ref={(el) => {
+                  linkRefs.current['/blog'] = el;
+                }}
+                className={desktopLinkClass('/blog', 'blue')}
+              >
+                Blog
               </Link>
             </nav>
           </div>
@@ -263,6 +278,30 @@ export default function Header() {
                     <FiPackage size={18} />
                   </div>
                   Productos (Terra)
+                </Link>
+
+                <Link
+                  to="/portafolio"
+                  onClick={closeMenu}
+                  className={`flex items-center gap-4 text-lg font-medium transition-all duration-300 py-3 px-4 rounded-2xl ${isActive('/portafolio') ? 'bg-blue-50 text-blue-900 shadow-sm' : 'text-slate-600 active:bg-slate-50'
+                    }`}
+                >
+                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${isActive('/portafolio') ? 'bg-blue-900 text-white' : 'bg-slate-100 text-slate-500'}`}>
+                    <FiBriefcase size={18} />
+                  </div>
+                  Portafolio
+                </Link>
+
+                <Link
+                  to="/blog"
+                  onClick={closeMenu}
+                  className={`flex items-center gap-4 text-lg font-medium transition-all duration-300 py-3 px-4 rounded-2xl ${isActive('/blog') ? 'bg-blue-50 text-blue-900 shadow-sm' : 'text-slate-600 active:bg-slate-50'
+                    }`}
+                >
+                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${isActive('/blog') ? 'bg-blue-900 text-white' : 'bg-slate-100 text-slate-500'}`}>
+                    <FiBriefcase size={18} />
+                  </div>
+                  Blog
                 </Link>
 
                 <Link

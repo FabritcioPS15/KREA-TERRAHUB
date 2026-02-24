@@ -50,7 +50,7 @@ export default function Footer() {
           {/* Top CTA Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
             {/* Identity Column */}
-            <div className="lg:col-span-4">
+            <div className="lg:col-span-3">
               <FadeIn direction="up" delay={0.1}>
                 <Link to="/" className="inline-block mb-8">
                   <div className="flex items-center gap-4 bg-white/5 p-3 rounded-2xl border border-white/10 backdrop-blur-sm">
@@ -66,7 +66,7 @@ export default function Footer() {
                     </div>
                   </div>
                 </Link>
-                <p className="text-white/50 text-base leading-relaxed mb-8 max-w-sm">
+                <p className="text-white/50 text-base leading-relaxed mb-6 max-w-sm">
                   Un HUB empresarial estratégico que fusiona la excelencia en infraestructura con la pureza agroindustrial de origen. Construimos futuro, cultivamos legado.
                 </p>
                 <div className="flex items-center gap-4">
@@ -131,9 +131,24 @@ export default function Footer() {
                 </ul>
               </FadeIn>
             </div>
+            <div className="lg:col-span-2">
+              <FadeIn direction="up" delay={0.35}>
+                <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-white/90 mb-8 px-1">Talento K&T</h4>
+                <div className="flex flex-col gap-4">
+                  <p className="text-[11px] text-white/40 leading-relaxed uppercase tracking-widest">¿Quieres ser parte de nuestro equipo?</p>
+                  <Link
+                    to="/contacto"
+                    className="inline-flex items-center gap-2 px-5 py-3 bg-white/5 border border-white/10 rounded-xl text-white font-semibold text-xs hover:bg-white/10 hover:border-white/20 transition-all duration-300 group whitespace-nowrap"
+                  >
+                    <FiBriefcase className="text-blue-400 group-hover:scale-110 transition-transform" />
+                    Trabaja con nosotros
+                  </Link>
+                </div>
+              </FadeIn>
+            </div>
 
             {/* Contact Column */}
-            <div className="lg:col-span-4">
+            <div className="lg:col-span-3">
               <FadeIn direction="up" delay={0.4}>
                 <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-white/90 mb-8 px-1">Atención HUB</h4>
                 <div className="space-y-6">

@@ -10,6 +10,8 @@ const Products = lazy(() => import('./pages/Products'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
+const Portfolio = lazy(() => import('./pages/Portfolio'));
+const Blog = lazy(() => import('./pages/Blog'));
 
 // Componente de carga simple
 const PageLoader = () => (
@@ -42,6 +44,8 @@ function App() {
               <Route path="/servicios/:slug" element={<ServiceDetail />} />
               <Route path="/productos" element={<Products />} />
               <Route path="/nosotros" element={<About />} />
+              <Route path="/portafolio" element={<Portfolio />} />
+              <Route path="/blog" element={<Blog />} />
               <Route path="/contacto" element={<Contact />} />
             </Routes>
           </Suspense>

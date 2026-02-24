@@ -1,4 +1,4 @@
-import { FaBolt, FaBuilding, FaTint, FaTools } from 'react-icons/fa';
+import { FaBolt, FaBuilding, FaTint, FaTools, FaProjectDiagram, FaDraftingCompass, FaCampground, FaPaintRoller } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { FiHome, FiChevronRight } from 'react-icons/fi';
 import FadeIn from '../components/FadeIn';
@@ -20,7 +20,7 @@ const services = [
     description:
       'Diseño y fabricación de muebles personalizados en melamina, adaptados a tus necesidades y espacios específicos.',
     icon: FaTools,
-    image: '/assets/images/Melamina y muebles.jpeg',
+    image: '/assets/images/Melamine y muebles.jpeg',
   },
   {
     id: 3,
@@ -38,7 +38,43 @@ const services = [
     description:
       'Instalación y mantenimiento de sistemas de gasfitería, agua y saneamiento con garantía y profesionalismo.',
     icon: FaTint,
-    image: '/assets/images/Gasfitería y saneamiento.jpeg',
+    image: '/assets/images/Gasfiteria y saneamiento.jpeg',
+  },
+  {
+    id: 5,
+    slug: 'proyectos-civiles-electromecanicos',
+    title: 'Proyectos Civiles y Electromecánicos',
+    description:
+      'Ejecución de proyecto civiles y electromecánicos, combinando ingeniería especializada y de calidad para los diferentes sectores. ',
+    icon: FaProjectDiagram,
+    image: '/assets/images/Proyectos Civiles.jpeg',
+  },
+  {
+    id: 6,
+    slug: 'acabados-arquitectura-interior',
+    title: 'Acabados & Arquitectura Interior',
+    description:
+      'Diseño y desarrollo de espacios interiores, incorporando acabados de calidad y soluciones creativas. ',
+    icon: FaDraftingCompass,
+    image: '/assets/images/Melamine y muebles.jpeg',
+  },
+  {
+    id: 7,
+    slug: 'campamentos-minerales-industriales',
+    title: 'Campamentos Minerales e Industriales',
+    description:
+      'Diseño y fabricación e implementación de campamentos modulares para operaciones mineras e industriales; garantizando la seguridad, funcionalidad y eficiencia operativa. ',
+    icon: FaCampground,
+    image: 'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
+  },
+  {
+    id: 8,
+    slug: 'pintura-revestimiento',
+    title: 'Pintura & Revestimiento',
+    description:
+      'Aplicamos sistemas de pintura y recubrimiento de alto desempeño para proyectos residenciales, comerciales e industriales. Garantizamos uniformidad, durabilidad y acabados de precisión, cumpliendo estándares técnicos y estéticos en cada superficie intervenida.',
+    icon: FaPaintRoller,
+    image: '/assets/images/Gasfiteria y saneamiento.jpeg',
   },
 ];
 

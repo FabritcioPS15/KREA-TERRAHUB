@@ -1,13 +1,13 @@
 import { useParams, Link } from 'react-router-dom';
 import { FiHome, FiChevronRight, FiCheckCircle, FiArrowRight } from 'react-icons/fi';
-import { FaBuilding, FaTools, FaBolt, FaTint } from 'react-icons/fa';
+import { FaBuilding, FaTools, FaBolt, FaTint, FaProjectDiagram, FaDraftingCompass, FaCampground, FaPaintRoller } from 'react-icons/fa';
 import FadeIn from '../components/FadeIn';
 
 const serviceData: Record<string, any> = {
     'drywall-estructuras': {
         title: 'Drywall & Estructuras',
         icon: FaBuilding,
-        image: 'https://images.pexels.com/photos/5767925/pexels-photo-5767925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        image: '/assets/images/Drywall y estructuras.jpeg',
         description: 'Nuestra especialidad en Drywall y estructuras metálicas ofrece soluciones rápidas, limpias y altamente resistentes para la creación de espacios modernos.',
         fullDescription: 'En KREA & TERRA HUB, entendemos que la eficiencia y el acabado son fundamentales en la construcción moderna. Por ello, empleamos los mejores materiales y técnicas de vanguardia en la instalación de sistemas de construcción en seco (drywall). Ya sea para divisiones de oficinas, techos suspendidos o decoraciones arquitectónicas complejas, nuestro equipo garantiza una ejecución impecable.',
         benefits: [
@@ -26,7 +26,7 @@ const serviceData: Record<string, any> = {
     'melamina-muebles': {
         title: 'Melamina y Muebles',
         icon: FaTools,
-        image: 'https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        image: '/assets/images/Melamine y muebles.jpeg',
         description: 'Creamos mobiliario a medida que combina funcionalidad, estética y durabilidad, adaptado perfectamente a tu estilo de vida.',
         fullDescription: 'El diseño de interiores cobra vida con nuestros muebles de melamina. Nos especializamos en la fabricación de cocinas integrales, clósets, centros de entretenimiento y mobiliario de oficina. Utilizamos herrajes de alta calidad y una amplia gama de texturas y colores para que cada pieza sea única y funcional.',
         benefits: [
@@ -64,7 +64,7 @@ const serviceData: Record<string, any> = {
     'gasfiteria-saneamiento': {
         title: 'Gasfitería y Saneamiento',
         icon: FaTint,
-        image: 'https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        image: '/assets/images/Gasfiteria y saneamiento.jpeg',
         description: 'Soluciones integrales en fontanería y saneamiento que aseguran el correcto funcionamiento del agua y drenaje en tu edificio.',
         fullDescription: 'Ofrecemos un servicio de gasfitería profesional que abarca desde reparaciones menores hasta instalaciones sanitarias complejas en proyectos nuevos. Nos especializamos en tuberías de agua fría y caliente, sistemas de desagüe, y la instalación de grifería y sanitarios de alta gama, garantizando hermeticidad y durabilidad.',
         benefits: [
@@ -78,6 +78,82 @@ const serviceData: Record<string, any> = {
             { title: 'Redes de Agua', desc: 'Instalación de tuberías termofusionadas y de PVC.' },
             { title: 'Sistemas de Desagüe', desc: 'Diseño eficiente para evitar atoros y malos olores.' },
             { title: 'Equipamiento Sanitario', desc: 'Montaje de termas, loza sanitaria y griferías modernas.' }
+        ]
+    },
+    'proyectos-civiles-electromecanicos': {
+        title: 'Proyectos Civiles y Electromecánicos',
+        icon: FaProjectDiagram,
+        image: '/assets/images/Proyectos Civiles.jpeg',
+        description: 'Ejecución de proyectos integrales que combinan ingeniería civil de precisión con soluciones electromecánicas avanzadas.',
+        fullDescription: 'En KREA & TERRA HUB, desarrollamos proyectos de gran envergadura integrando la infraestructura civil con sistemas electromecánicos eficientes. Nuestra experiencia abarca desde cimentaciones especializadas hasta el montaje de subestaciones y redes industriales, asegurando una sinergia perfecta entre estructura y operatividad.',
+        benefits: [
+            'Gestión integral de obra (Civil + Electromecánico).',
+            'Cumplimiento de estándares internacionales de ingeniería.',
+            'Uso de maquinaria y tecnología de última generación.',
+            'Seguridad industrial bajo normas rigurosas.',
+            'Eficiencia en costos y tiempos de ejecución.'
+        ],
+        features: [
+            { title: 'Obras Civiles', desc: 'Cimentaciones, estructuras de concreto y acabados industriales.' },
+            { title: 'Montaje Electromecánico', desc: 'Instalación de motores, tableros industriales y ducterías.' },
+            { title: 'Mantenimiento de Planta', desc: 'Servicios de parada de planta y mantenimiento crítico.' }
+        ]
+    },
+    'acabados-arquitectura-interior': {
+        title: 'Acabados & Arquitectura Interior',
+        icon: FaDraftingCompass,
+        image: '/assets/images/Melamine y muebles.jpeg',
+        description: 'Transformamos espacios en entornos inspiradores mediante acabados de lujo y un diseño arquitectónico centrado en el usuario.',
+        fullDescription: 'La arquitectura interior es el arte de optimizar el espacio sin sacrificar la belleza. Nos especializamos en acabados de alta gama, incluyendo revestimientos, pintura decorativa, iluminación arquitectónica y optimización de flujos. Creamos conceptos que reflejan la identidad de nuestros clientes, ya sea en áreas comerciales, corporativas o residenciales.',
+        benefits: [
+            'Diseños personalizados con identidad propia.',
+            'Materiales de alta gama y durabilidad garantizada.',
+            'Optimización del confort térmico y lumínico.',
+            'Aumento del valor comercial de su propiedad.',
+            'Ejecución detallada con supervisión experta.'
+        ],
+        features: [
+            { title: 'Diseño de Interiores', desc: 'Planificación de espacios, texturas y paletas de colores.' },
+            { title: 'Iluminación', desc: 'Diseño lumínico funcional y decorativo.' },
+            { title: 'Revestimientos', desc: 'Instalación de pisos, cerámicos y acabados de pared.' }
+        ]
+    },
+    'campamentos-minerales-industriales': {
+        title: 'Campamentos Minerales e Industriales',
+        icon: FaCampground,
+        image: 'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        description: 'Diseño y montaje de infraestructura modular resistente para operaciones en entornos remotos y exigentes.',
+        fullDescription: 'Nuestros campamentos modulares están diseñados para ofrecer máxima funcionalidad y confort en las condiciones más extremas. Desde dormitorios y oficinas hasta comedores y áreas recreativas, garantizamos una instalación rápida y segura, cumpliendo con todos los requisitos de habitabilidad y sostenibilidad necesarios para el sector minero e industrial.',
+        benefits: [
+            'Instalación rápida mediante sistemas modulares.',
+            'Alta resistencia a climas extremos.',
+            'Cumplimiento total de normas de seguridad y salud.',
+            'Estructuras escalables según el crecimiento del proyecto.',
+            'Logística eficiente para zonas de difícil acceso.'
+        ],
+        features: [
+            { title: 'Módulos Habitacionales', desc: 'Dormitorios térmicos y confortables para personal.' },
+            { title: 'Áreas de Servicio', desc: 'Comedores, lavanderías y centros médicos modulares.' },
+            { title: 'Seguridad y Confort', desc: 'Sistemas contra incendios y aislamiento acústico.' }
+        ]
+    },
+    'pintura-revestimiento': {
+        title: 'Pintura & Revestimiento',
+        icon: FaPaintRoller,
+        image: '/assets/images/Gasfiteria y saneamiento.jpeg',
+        description: 'Protección y estética de alto nivel mediante sistemas de recubrimiento industriales y decorativos profesionales.',
+        fullDescription: 'Más allá de la estética, la pintura es protección. Aplicamos sistemas de recubrimiento de alto desempeño diseñados para resistir la corrosión, el tráfico pesado y agentes químicos. Desde pintura epóxica para pisos industriales hasta acabados arquitectónicos de alta gama, nuestro equipo asegura una aplicación uniforme y duradera con preparación profesional de superficies.',
+        benefits: [
+            'Protección duradera contra la corrosión y el desgaste.',
+            'Acabados estéticos impecables y uniformes.',
+            'Uso de pinturas de alta calidad y bajo VOC.',
+            'Especialistas en recubrimientos epóxicos.',
+            'Garantía de adherencia mediante preparación mecánica.'
+        ],
+        features: [
+            { title: 'Pintura Industrial', desc: 'Recubrimientos epóxicos y poliuretanos para industria.' },
+            { title: 'Acabados Decorativos', desc: 'Técnicas modernas de pintura para interiores y fachadas.' },
+            { title: 'Tratamiento de Superficies', desc: 'Arenado y limpieza profunda para máxima adherencia.' }
         ]
     }
 };

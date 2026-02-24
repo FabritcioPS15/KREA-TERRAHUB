@@ -11,7 +11,7 @@ const services = [
     description:
       'Construcción y diseño de estructuras en drywall para espacios modernos y funcionales con acabados de primera calidad.',
     icon: FaBuilding,
-    image: 'https://images.pexels.com/photos/5767925/pexels-photo-5767925.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
+    image: '/assets/images/Drywall y estructuras.jpeg',
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const services = [
     description:
       'Diseño y fabricación de muebles personalizados en melamina, adaptados a tus necesidades y espacios específicos.',
     icon: FaTools,
-    image: 'https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
+    image: '/assets/images/Melamina y muebles.jpeg',
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const services = [
     description:
       'Instalación y mantenimiento de sistemas de gasfitería, agua y saneamiento con garantía y profesionalismo.',
     icon: FaTint,
-    image: 'https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
+    image: '/assets/images/Gasfitería y saneamiento.jpeg',
   },
 ];
 

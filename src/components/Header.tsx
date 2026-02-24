@@ -238,7 +238,7 @@ export default function Header() {
               <div className="absolute bottom-[-10%] left-[-10%] w-[60%] h-[50%] bg-green-900/40 blur-[120px] rounded-full" />
             </div>
 
-            <nav className="relative min-h-screen flex flex-col p-6 pt-16">
+            <nav className="relative min-h-screen flex flex-col p-6 pt-8">
               {/* Logo y Botón de Cierre */}
               <div className="flex items-center justify-between mb-8">
                 <Link to="/" className="flex items-center" onClick={closeMenu}>

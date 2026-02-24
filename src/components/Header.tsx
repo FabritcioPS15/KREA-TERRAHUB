@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { FiMenu, FiX, FiHome, FiUsers, FiBriefcase, FiPackage, FiMail, FiPhone, FiLayers, FiFileText } from 'react-icons/fi';
 import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -28,10 +28,9 @@ export default function Header() {
     return location.pathname.startsWith('/productos') ? 'bg-green-600/20' : 'bg-blue-900/15';
   }, [isHomePage, isScrolled, location.pathname]);
 
-  const desktopLinkClass = (path: string, accent: 'blue' | 'green') => {
+  const desktopLinkClass = (accent: 'blue' | 'green', active: boolean) => {
     const base =
       'relative text-sm font-semibold px-4 py-2 rounded-md transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2';
-    const active = isActive(path);
 
     if (isHomePage && !isScrolled) {
       return `${base} focus-visible:ring-white/60 focus-visible:ring-offset-transparent ${active ? 'text-white' : 'text-white/80 hover:text-white'
@@ -57,6 +56,11 @@ export default function Header() {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  // Cerrar menú automáticamente cuando cambie la ruta
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
 
   useLayoutEffect(() => {
     const updateMarker = () => {
@@ -108,10 +112,10 @@ export default function Header() {
           <div className="flex-1 flex justify-start">
             <Link to="/" className="flex items-center" onClick={closeMenu}>
               <div
-                className={`flex items-center px-3 py-1.5 md:px-4 md:py-2 rounded-xl transition-all duration-500 ${isHomePage && !isScrolled ? 'bg-white/90 shadow-lg backdrop-blur-sm' : 'bg-transparent shadow-none'
+                className={`flex items-center px-3 py-1.5 lg:px-4 lg:py-2 rounded-xl transition-all duration-500 ${isHomePage && !isScrolled ? 'bg-white/90 shadow-lg backdrop-blur-sm' : 'bg-transparent shadow-none'
                   }`}
               >
-                <div className="relative flex items-center h-8 md:h-10">
+                <div className="relative flex items-center h-8 lg:h-10">
                   <img
                     src="/assets/logo.png"
                     alt="KREA & TERRA HUB S.A.C."
@@ -128,7 +132,7 @@ export default function Header() {
           </div>
 
           {/* Centro: Navegación Principal */}
-          <div className="hidden md:flex flex-none items-center">
+          <div className="hidden lg:flex flex-none items-center">
             <div ref={navRef} className="relative flex items-center">
               <div
                 className={`absolute top-1/2 -translate-y-1/2 h-9 rounded-md transition-[left,width,opacity] duration-300 ease-out ${markerColorClass} ${marker.visible ? 'opacity-100' : 'opacity-0'
@@ -138,60 +142,60 @@ export default function Header() {
               />
 
               <nav className="relative flex items-center gap-1 lg:gap-2">
-                <Link
+                <NavLink
                   to="/"
                   ref={(el) => {
                     linkRefs.current['/'] = el;
                   }}
-                  className={desktopLinkClass('/', 'blue')}
+                  className={({ isActive }) => desktopLinkClass('blue', isActive)}
                 >
                   Inicio
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to="/nosotros"
                   ref={(el) => {
                     linkRefs.current['/nosotros'] = el;
                   }}
-                  className={desktopLinkClass('/nosotros', 'blue')}
+                  className={({ isActive }) => desktopLinkClass('blue', isActive)}
                 >
                   Nosotros
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to="/servicios"
                   ref={(el) => {
                     linkRefs.current['/servicios'] = el;
                   }}
-                  className={desktopLinkClass('/servicios', 'blue')}
+                  className={({ isActive }) => desktopLinkClass('blue', isActive)}
                 >
                   Servicios (Krea)
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to="/productos"
                   ref={(el) => {
                     linkRefs.current['/productos'] = el;
                   }}
-                  className={desktopLinkClass('/productos', 'green')}
+                  className={({ isActive }) => desktopLinkClass('green', isActive)}
                 >
                   Producto (Terra)
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to="/portafolio"
                   ref={(el) => {
                     linkRefs.current['/portafolio'] = el;
                   }}
-                  className={desktopLinkClass('/portafolio', 'blue')}
+                  className={({ isActive }) => desktopLinkClass('blue', isActive)}
                 >
                   Portafolio
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to="/blog"
                   ref={(el) => {
                     linkRefs.current['/blog'] = el;
                   }}
-                  className={desktopLinkClass('/blog', 'blue')}
+                  className={({ isActive }) => desktopLinkClass('blue', isActive)}
                 >
                   Blog
-                </Link>
+                </NavLink>
               </nav>
             </div>
           </div>
@@ -200,7 +204,7 @@ export default function Header() {
           <div className="flex-1 flex justify-end items-center gap-4">
             <Link
               to="/contacto"
-              className={`hidden md:inline-flex px-5 py-2 rounded-md font-bold text-xs uppercase tracking-widest transition-all duration-300 ${isHomePage && !isScrolled
+              className={`hidden lg:inline-flex px-5 py-2 rounded-md font-bold text-xs uppercase tracking-widest transition-all duration-300 ${isHomePage && !isScrolled
                 ? 'bg-white text-blue-950 hover:bg-gray-100 shadow-sm'
                 : 'bg-blue-900 text-white hover:bg-blue-800 shadow-md'
                 }`}
@@ -209,7 +213,7 @@ export default function Header() {
             </Link>
 
             <button
-              className={`md:hidden transition-colors ${isHomePage && !isScrolled
+              className={`lg:hidden transition-colors ${isHomePage && !isScrolled
                 ? 'text-white hover:text-white/80'
                 : 'text-gray-600 hover:text-gray-800'
                 }`}
@@ -230,7 +234,7 @@ export default function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[60] bg-slate-950/95 backdrop-blur-2xl md:hidden overflow-y-auto"
+            className="fixed inset-0 z-[60] bg-slate-950/95 backdrop-blur-2xl lg:hidden overflow-y-auto"
           >
             {/* Fondo Decorativo para el Menú */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">

@@ -45,7 +45,7 @@ export default function Home() {
           <img
             src="/assets/images/Arboldecacao.webp"
             alt="TERRA"
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
+            className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105"
           />
           {/* Overlay color - Gradiente sutil para permitir ver parte de la imagen */}
           <div className="absolute inset-0 bg-gradient-to-l from-green-950/20 via-green-900/60 to-green-900/90" />

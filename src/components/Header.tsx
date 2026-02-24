@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FiMenu, FiX, FiHome, FiUsers, FiBriefcase, FiPackage, FiMail, FiPhone } from 'react-icons/fi';
+import { FiMenu, FiX, FiHome, FiUsers, FiBriefcase, FiPackage, FiMail, FiPhone, FiLayers, FiFileText } from 'react-icons/fi';
 import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -90,260 +90,264 @@ export default function Header() {
   };
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      className={`fixed w-full top-0 z-50 transition-colors duration-300 ${isHomePage && !isScrolled
-        ? 'bg-transparent backdrop-blur-none shadow-none border-none'
-        : !isScrolled
-          ? 'bg-white shadow-sm border-b border-gray-200'
-          : 'bg-white/70 backdrop-blur-xl shadow-[0_10px_30px_-20px_rgba(0,0,0,0.35)] border-b border-gray-200/60'
-        }`}
-    >
-      <div className="container mx-auto px-6 py-3 flex items-center">
-        {/* Lado Izquierdo: Logo */}
-        <div className="flex-1 flex justify-start">
-          <Link to="/" className="flex items-center" onClick={closeMenu}>
-            <div
-              className={`flex items-center px-3 py-1.5 md:px-4 md:py-2 rounded-xl transition-all duration-300 ${isHomePage && !isScrolled ? 'bg-white/90 shadow-md backdrop-blur-sm' : ''
+    <>
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+        className={`fixed w-full top-0 z-50 transition-all duration-500 ease-in-out ${isHomePage && !isScrolled
+          ? 'bg-white/0 backdrop-blur-0 shadow-none border-transparent'
+          : !isScrolled
+            ? 'bg-white shadow-sm border-gray-200'
+            : 'bg-white/80 backdrop-blur-lg shadow-[0_8px_30px_rgb(0,0,0,0.12)] border-gray-200/50'
+          }`}
+        style={{ willChange: 'background-color, backdrop-filter, box-shadow' }}
+      >
+        <div className="container mx-auto px-6 py-3 flex items-center">
+          {/* Lado Izquierdo: Logo */}
+          <div className="flex-1 flex justify-start">
+            <Link to="/" className="flex items-center" onClick={closeMenu}>
+              <div
+                className={`flex items-center px-3 py-1.5 md:px-4 md:py-2 rounded-xl transition-all duration-500 ${isHomePage && !isScrolled ? 'bg-white/90 shadow-lg backdrop-blur-sm' : 'bg-transparent shadow-none'
+                  }`}
+              >
+                <div className="relative flex items-center h-8 md:h-10">
+                  <img
+                    src="/assets/logo.png"
+                    alt="KREA & TERRA HUB S.A.C."
+                    className="h-full object-contain drop-shadow-sm hover:drop-shadow-md transition-all duration-300 transform hover:scale-105"
+                  />
+                </div>
+                <div className="flex items-baseline ml-2 sm:ml-4">
+                  <span className="font-bold text-[13px] sm:text-base leading-none bg-gradient-to-r from-blue-900 to-green-600 bg-clip-text text-transparent uppercase tracking-tight">
+                    KREA & TERRA HUB
+                  </span>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          {/* Centro: Navegación Principal */}
+          <div className="hidden md:flex flex-none items-center">
+            <div ref={navRef} className="relative flex items-center">
+              <div
+                className={`absolute top-1/2 -translate-y-1/2 h-9 rounded-md transition-[left,width,opacity] duration-300 ease-out ${markerColorClass} ${marker.visible ? 'opacity-100' : 'opacity-0'
+                  }`}
+                style={{ left: marker.left, width: marker.width }}
+                aria-hidden="true"
+              />
+
+              <nav className="relative flex items-center gap-1 lg:gap-2">
+                <Link
+                  to="/"
+                  ref={(el) => {
+                    linkRefs.current['/'] = el;
+                  }}
+                  className={desktopLinkClass('/', 'blue')}
+                >
+                  Inicio
+                </Link>
+                <Link
+                  to="/nosotros"
+                  ref={(el) => {
+                    linkRefs.current['/nosotros'] = el;
+                  }}
+                  className={desktopLinkClass('/nosotros', 'blue')}
+                >
+                  Nosotros
+                </Link>
+                <Link
+                  to="/servicios"
+                  ref={(el) => {
+                    linkRefs.current['/servicios'] = el;
+                  }}
+                  className={desktopLinkClass('/servicios', 'blue')}
+                >
+                  Servicios (Krea)
+                </Link>
+                <Link
+                  to="/productos"
+                  ref={(el) => {
+                    linkRefs.current['/productos'] = el;
+                  }}
+                  className={desktopLinkClass('/productos', 'green')}
+                >
+                  Producto (Terra)
+                </Link>
+                <Link
+                  to="/portafolio"
+                  ref={(el) => {
+                    linkRefs.current['/portafolio'] = el;
+                  }}
+                  className={desktopLinkClass('/portafolio', 'blue')}
+                >
+                  Portafolio
+                </Link>
+                <Link
+                  to="/blog"
+                  ref={(el) => {
+                    linkRefs.current['/blog'] = el;
+                  }}
+                  className={desktopLinkClass('/blog', 'blue')}
+                >
+                  Blog
+                </Link>
+              </nav>
+            </div>
+          </div>
+
+          {/* Lado Derecho: Botón de Contacto y Menú Móvil */}
+          <div className="flex-1 flex justify-end items-center gap-4">
+            <Link
+              to="/contacto"
+              className={`hidden md:inline-flex px-5 py-2 rounded-md font-bold text-xs uppercase tracking-widest transition-all duration-300 ${isHomePage && !isScrolled
+                ? 'bg-white text-blue-950 hover:bg-gray-100 shadow-sm'
+                : 'bg-blue-900 text-white hover:bg-blue-800 shadow-md'
                 }`}
             >
-              <div className="relative flex items-center h-8 md:h-10">
-                <img
-                  src="/assets/logo.png"
-                  alt="KREA & TERRA HUB S.A.C."
-                  className="h-full object-contain drop-shadow-sm hover:drop-shadow-md transition-all duration-300 transform hover:scale-105"
-                />
-              </div>
-              <div className="flex items-baseline ml-2 sm:ml-4">
-                <span className="font-bold text-[13px] sm:text-base leading-none bg-gradient-to-r from-blue-900 to-green-600 bg-clip-text text-transparent uppercase tracking-tight">
-                  KREA & TERRA HUB
-                </span>
-              </div>
-            </div>
-          </Link>
-        </div>
+              Contacto
+            </Link>
 
-        {/* Centro: Navegación Principal */}
-        <div className="hidden md:flex flex-none items-center">
-          <div ref={navRef} className="relative flex items-center">
-            <div
-              className={`absolute top-1/2 -translate-y-1/2 h-9 rounded-md transition-[left,width,opacity] duration-300 ease-out ${markerColorClass} ${marker.visible ? 'opacity-100' : 'opacity-0'
+            <button
+              className={`md:hidden transition-colors ${isHomePage && !isScrolled
+                ? 'text-white hover:text-white/80'
+                : 'text-gray-600 hover:text-gray-800'
                 }`}
-              style={{ left: marker.left, width: marker.width }}
-              aria-hidden="true"
-            />
-
-            <nav className="relative flex items-center gap-1 lg:gap-2">
-              <Link
-                to="/"
-                ref={(el) => {
-                  linkRefs.current['/'] = el;
-                }}
-                className={desktopLinkClass('/', 'blue')}
-              >
-                Inicio
-              </Link>
-              <Link
-                to="/nosotros"
-                ref={(el) => {
-                  linkRefs.current['/nosotros'] = el;
-                }}
-                className={desktopLinkClass('/nosotros', 'blue')}
-              >
-                Nosotros
-              </Link>
-              <Link
-                to="/servicios"
-                ref={(el) => {
-                  linkRefs.current['/servicios'] = el;
-                }}
-                className={desktopLinkClass('/servicios', 'blue')}
-              >
-                Servicios (Krea)
-              </Link>
-              <Link
-                to="/productos"
-                ref={(el) => {
-                  linkRefs.current['/productos'] = el;
-                }}
-                className={desktopLinkClass('/productos', 'green')}
-              >
-                Producto (Terra)
-              </Link>
-              <Link
-                to="/portafolio"
-                ref={(el) => {
-                  linkRefs.current['/portafolio'] = el;
-                }}
-                className={desktopLinkClass('/portafolio', 'blue')}
-              >
-                Portafolio
-              </Link>
-              <Link
-                to="/blog"
-                ref={(el) => {
-                  linkRefs.current['/blog'] = el;
-                }}
-                className={desktopLinkClass('/blog', 'blue')}
-              >
-                Blog
-              </Link>
-            </nav>
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            </button>
           </div>
         </div>
 
-        {/* Lado Derecho: Botón de Contacto y Menú Móvil */}
-        <div className="flex-1 flex justify-end items-center gap-4">
-          <Link
-            to="/contacto"
-            className={`hidden md:inline-flex px-5 py-2 rounded-md font-bold text-xs uppercase tracking-widest transition-all duration-300 ${isHomePage && !isScrolled
-              ? 'bg-white text-blue-950 hover:bg-gray-100 shadow-sm'
-              : 'bg-blue-900 text-white hover:bg-blue-800 shadow-md'
-              }`}
-          >
-            Contacto
-          </Link>
-
-          <button
-            className={`md:hidden transition-colors ${isHomePage && !isScrolled
-              ? 'text-white hover:text-white/80'
-              : 'text-gray-600 hover:text-gray-800'
-              }`}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-          </button>
-        </div>
-      </div>
+      </motion.header>
 
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-200/50 overflow-hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-[60] bg-slate-950/95 backdrop-blur-2xl md:hidden overflow-y-auto"
           >
-            <nav className="container mx-auto px-6 pt-6 pb-12 flex flex-col h-full">
-              <div className="flex flex-col gap-2">
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4 px-2">Menú Principal</span>
+            {/* Fondo Decorativo para el Menú */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+              <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[50%] bg-blue-900/60 blur-[120px] rounded-full" />
+              <div className="absolute bottom-[-10%] left-[-10%] w-[60%] h-[50%] bg-green-900/40 blur-[120px] rounded-full" />
+            </div>
 
-                <Link
-                  to="/"
-                  onClick={closeMenu}
-                  className={`flex items-center gap-4 text-lg font-medium transition-all duration-300 py-3 px-4 rounded-2xl ${isActive('/') ? 'bg-blue-50 text-blue-900 shadow-sm' : 'text-slate-600 active:bg-slate-50'
-                    }`}
+            <nav className="relative min-h-screen flex flex-col p-6 pt-20">
+              {/* Botón de Cierre Superior Derecha */}
+              <button
+                className="absolute top-5 right-6 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:text-white transition-all duration-300"
+                onClick={closeMenu}
+                aria-label="Close menu"
+              >
+                <FiX size={28} />
+              </button>
+
+              <div className="container mx-auto max-w-lg">
+                <div className="space-y-1 mb-6">
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 }}
+                  >
+                    <span className="text-[10px] font-bold text-blue-400 uppercase tracking-[0.3em] mb-4 block px-4 opacity-70">
+                      Navegación
+                    </span>
+                  </motion.div>
+
+                  {[
+                    { to: "/", label: "Inicio", icon: FiHome, color: "blue" },
+                    { to: "/nosotros", label: "Nosotros", icon: FiUsers, color: "blue" },
+                    { to: "/servicios", label: "Servicios (Krea)", icon: FiBriefcase, color: "blue" },
+                    { to: "/productos", label: "Producto (Terra)", icon: FiPackage, color: "green" },
+                    { to: "/portafolio", label: "Portafolio", icon: FiLayers, color: "blue" },
+                    { to: "/blog", label: "Blog", icon: FiFileText, color: "blue" },
+                    { to: "/contacto", label: "Contacto", icon: FiMail, color: "blue" },
+                  ].map((item, idx) => (
+                    <motion.div
+                      key={item.to}
+                      initial={{ opacity: 0, x: -30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.15 + idx * 0.05, ease: "easeOut" }}
+                    >
+                      <Link
+                        to={item.to}
+                        onClick={closeMenu}
+                        className={`group relative flex items-center justify-between py-3 px-4 rounded-xl transition-all duration-300 ${isActive(item.to)
+                          ? 'bg-white/10 border border-white/10 shadow-lg'
+                          : 'hover:bg-white/5 border border-transparent hover:border-white/5'
+                          }`}
+                      >
+                        <div className="flex items-center gap-4">
+                          <div className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300 ${isActive(item.to)
+                            ? item.color === 'green' ? 'bg-green-600 text-white' : 'bg-blue-600 text-white'
+                            : 'bg-white/5 text-white/40 group-hover:text-white/70 group-hover:bg-white/10'
+                            }`}>
+                            <item.icon size={18} />
+                          </div>
+                          <span className={`text-lg font-medium tracking-tight transition-all duration-300 ${isActive(item.to) ? 'text-white' : 'text-white/60 group-hover:text-white'
+                            }`}>
+                            {item.label}
+                          </span>
+                        </div>
+                        {isActive(item.to) && (
+                          <div
+                            className={`w-2 h-2 rounded-full ${item.color === 'green' ? 'bg-green-400' : 'bg-blue-400'}`}
+                          />
+                        )}
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.55 }}
+                  className="pt-6 border-t border-white/10 mt-4"
                 >
-                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${isActive('/') ? 'bg-blue-900 text-white' : 'bg-slate-100 text-slate-500'}`}>
-                    <FiHome size={18} />
-                  </div>
-                  Inicio
-                </Link>
+                  <div className="grid grid-cols-1 gap-6">
+                    <div>
+                      <span className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] mb-3 block px-4">Conexión</span>
+                      <div className="flex flex-col gap-3">
+                        <a href="tel:+516802256956" className="flex items-center gap-4 text-white/70 hover:text-white font-medium p-3 bg-white/5 rounded-xl border border-transparent hover:border-white/10 transition-all duration-300">
+                          <div className="w-9 h-9 rounded-lg bg-blue-900/40 flex items-center justify-center text-blue-300">
+                            <FiPhone size={18} />
+                          </div>
+                          <div className="flex flex-col">
+                            <span className="text-[8px] uppercase tracking-widest text-white/30 font-bold">Central</span>
+                            <span className="text-sm">(680) 225-6956</span>
+                          </div>
+                        </a>
+                        <a href="mailto:krea@terrahub.com" className="flex items-center gap-4 text-white/70 hover:text-white font-medium p-3 bg-white/5 rounded-xl border border-transparent hover:border-white/10 transition-all duration-300">
+                          <div className="w-9 h-9 rounded-lg bg-blue-900/40 flex items-center justify-center text-blue-300">
+                            <FiMail size={18} />
+                          </div>
+                          <div className="flex flex-col">
+                            <span className="text-[8px] uppercase tracking-widest text-white/30 font-bold">Email</span>
+                            <span className="text-sm">krea@terrahub.com</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
 
-                <Link
-                  to="/nosotros"
-                  onClick={closeMenu}
-                  className={`flex items-center gap-4 text-lg font-medium transition-all duration-300 py-3 px-4 rounded-2xl ${isActive('/nosotros') ? 'bg-blue-50 text-blue-900 shadow-sm' : 'text-slate-600 active:bg-slate-50'
-                    }`}
-                >
-                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${isActive('/nosotros') ? 'bg-blue-900 text-white' : 'bg-slate-100 text-slate-500'}`}>
-                    <FiUsers size={18} />
-                  </div>
-                  Nosotros
-                </Link>
-
-                <Link
-                  to="/servicios"
-                  onClick={closeMenu}
-                  className={`flex items-center gap-4 text-lg font-medium transition-all duration-300 py-3 px-4 rounded-2xl ${isActive('/servicios') ? 'bg-blue-50 text-blue-900 shadow-sm' : 'text-slate-600 active:bg-slate-50'
-                    }`}
-                >
-                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${isActive('/servicios') ? 'bg-blue-900 text-white' : 'bg-slate-100 text-slate-500'}`}>
-                    <FiBriefcase size={18} />
-                  </div>
-                  Servicios (Krea)
-                </Link>
-
-                <Link
-                  to="/productos"
-                  onClick={closeMenu}
-                  className={`flex items-center gap-4 text-lg font-medium transition-all duration-300 py-3 px-4 rounded-2xl ${isActive('/productos') ? 'bg-green-50 text-green-800 shadow-sm' : 'text-slate-600 active:bg-slate-50'
-                    }`}
-                >
-                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${isActive('/productos') ? 'bg-green-700 text-white' : 'bg-slate-100 text-slate-500'}`}>
-                    <FiPackage size={18} />
-                  </div>
-                  Productos (Terra)
-                </Link>
-
-                <Link
-                  to="/portafolio"
-                  onClick={closeMenu}
-                  className={`flex items-center gap-4 text-lg font-medium transition-all duration-300 py-3 px-4 rounded-2xl ${isActive('/portafolio') ? 'bg-blue-50 text-blue-900 shadow-sm' : 'text-slate-600 active:bg-slate-50'
-                    }`}
-                >
-                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${isActive('/portafolio') ? 'bg-blue-900 text-white' : 'bg-slate-100 text-slate-500'}`}>
-                    <FiBriefcase size={18} />
-                  </div>
-                  Portafolio
-                </Link>
-
-                <Link
-                  to="/blog"
-                  onClick={closeMenu}
-                  className={`flex items-center gap-4 text-lg font-medium transition-all duration-300 py-3 px-4 rounded-2xl ${isActive('/blog') ? 'bg-blue-50 text-blue-900 shadow-sm' : 'text-slate-600 active:bg-slate-50'
-                    }`}
-                >
-                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${isActive('/blog') ? 'bg-blue-900 text-white' : 'bg-slate-100 text-slate-500'}`}>
-                    <FiBriefcase size={18} />
-                  </div>
-                  Blog
-                </Link>
-
-                <Link
-                  to="/contacto"
-                  onClick={closeMenu}
-                  className={`flex items-center gap-4 text-lg font-medium transition-all duration-300 py-3 px-4 rounded-2xl ${isActive('/contacto') ? 'bg-blue-50 text-blue-900 shadow-sm' : 'text-slate-600 active:bg-slate-50'
-                    }`}
-                >
-                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${isActive('/contacto') ? 'bg-blue-900 text-white' : 'bg-slate-100 text-slate-500'}`}>
-                    <FiMail size={18} />
-                  </div>
-                  Contacto
-                </Link>
-              </div>
-
-              <div className="mt-auto pt-10 border-t border-slate-100">
-                <div className="flex flex-col gap-6">
-                  <div>
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4 block px-2">Atención Directa</span>
-                    <div className="flex flex-col gap-3">
-                      <a href="tel:+516802256956" className="flex items-center gap-3 text-slate-700 font-medium px-2">
-                        <FiPhone className="text-blue-900" size={18} />
-                        (680) 225-6956
-                      </a>
-                      <a href="mailto:krea@terrahub.com" className="flex items-center gap-3 text-slate-700 font-medium px-2">
-                        <FiMail className="text-blue-900" size={18} />
-                        krea@terrahub.com
-                      </a>
+                    <div className="flex items-center justify-center gap-6 py-2">
+                      <a href="#" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-blue-600/20 hover:border-blue-500/30 transition-all duration-300"><FaFacebookF size={18} /></a>
+                      <a href="#" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-pink-600/20 hover:border-pink-500/30 transition-all duration-300"><FaInstagram size={18} /></a>
+                      <a href="#" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-red-600/20 hover:border-red-500/30 transition-all duration-300"><FaYoutube size={18} /></a>
                     </div>
                   </div>
-
-                  <div className="flex items-center gap-6 px-2">
-                    <a href="#" className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600"><FaFacebookF size={16} /></a>
-                    <a href="#" className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600"><FaInstagram size={16} /></a>
-                    <a href="#" className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600"><FaYoutube size={16} /></a>
-                  </div>
-                </div>
+                </motion.div>
               </div>
             </nav>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </>
   );
 }

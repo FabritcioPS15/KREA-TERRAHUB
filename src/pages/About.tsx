@@ -28,7 +28,7 @@ export default function About() {
 
           <FadeIn direction="up" delay={0.2} className="text-center px-4">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 tracking-tight leading-tight text-white">
-              NUESTRA VISIÓN COMO<br />
+              NUESTRA VISIÓN y MISIÓN COMO<br />
               <span className="text-blue-400 italic font-light">HUB EMPRESARIAL</span>
             </h1>
           </FadeIn>
@@ -39,13 +39,38 @@ export default function About() {
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <FadeIn direction="up" className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-800 mb-6">Misión & Visión</h2>
-              <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Somos un hub empresarial innovador que integra soluciones constructivas de alta calidad con
-                productos agroindustriales selectos, generando valor a través de alianzas estratégicas y
-                prácticas sostenibles que benefician a nuestros clientes y comunidades.
-              </p>
+              <h2 className="text-4xl font-bold text-gray-800 mb-6 uppercase tracking-tight">Nuestra Esencia</h2>
             </FadeIn>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-20">
+              <FadeIn direction="left" delay={0.1} className="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 flex flex-col h-full transform transition-all hover:shadow-xl hover:-translate-y-1">
+                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-8">
+                  <FiTarget className="text-blue-900" size={32} />
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-6 italic">MISIÓN</h3>
+                <p className="text-lg text-gray-600 leading-relaxed font-light">
+                  Nuestra misión es <span className="text-blue-900 font-medium italic">diseñar y ejecutar</span>
+                  infraestructura de alto valor, garantizando
+                  estándares superiores de calidad y
+                  acabados de excelencia en cada proyecto,
+                  así como comercializar productos
+                  agroindustriales de origen bajo criterios de
+                  sostenibilidad, eficiencia y alto estándar
+                  competitivo.
+                </p>
+              </FadeIn>
+
+              <FadeIn direction="right" delay={0.2} className="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 flex flex-col h-full transform transition-all hover:shadow-xl hover:-translate-y-1">
+                <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-8">
+                  <FiEye className="text-green-700" size={32} />
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-6 italic">VISIÓN</h3>
+                <p className="text-lg text-gray-600 leading-relaxed font-light">
+                  Ser el hub empresarial referente en Perú en<span className="text-green-700 font-medium italic">infraestructura y agroindustria,</span> reconocido como socio estratégico clave en proyectos de
+                  gran envergadura y en agroexportación de calidad mundial.
+                </p>
+              </FadeIn>
+            </div>
 
             <div className="flex flex-col lg:flex-row items-center justify-center gap-16 mb-24 scale-90 sm:scale-100">
               <FadeIn direction="up" delay={0.2} className="relative group text-center">
@@ -56,7 +81,7 @@ export default function About() {
                   </div>
                 </div>
                 <p className="mt-6 text-sm text-slate-600 leading-relaxed max-w-[200px] mx-auto">
-                  Soluciones constructivas integrales con enfoque en innovación y calidad de ejecución.
+                  Infraestructura y acabados de excelencia.
                 </p>
               </FadeIn>
 
@@ -150,7 +175,8 @@ export default function About() {
           <FadeIn direction="up">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light mb-8 leading-tight">Nuestro <span className="italic font-semibold text-blue-400">Propósito</span></h2>
             <p className="text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-light text-black px-2">
-              Ser el puente que conecta la <span className="text-blue-400 font-medium">construcción de espacios</span> con la producción de <span className="text-green-400 font-medium">alimentos naturales</span>, creando un ecosistema empresarial sostenible que genera impacto positivo real.
+              Ser el nexo estratégico entre la <span className="text-blue-400 font-medium">construcción </span> y <span className="text-green-400 font-medium">la agroindustria,
+              </span> integrando infraestructura de alto valor y producción sostenible para generar crecimiento rentable y desarrollo de largo plazo.
             </p>
           </FadeIn>
         </div>

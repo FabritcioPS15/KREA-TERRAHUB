@@ -5,6 +5,13 @@ import path from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  appType: 'spa', // ← SPA mode: sirve index.html para cualquier ruta (fix para React Router)
+  server: {
+    historyApiFallback: true, // ← fix recarga en desarrollo local
+  },
+  preview: {
+    historyApiFallback: true, // ← fix recarga en preview (npm run preview)
+  },
   optimizeDeps: {
     exclude: ['lucide-react'],
   },

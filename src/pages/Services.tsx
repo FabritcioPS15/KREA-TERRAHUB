@@ -49,6 +49,7 @@ const services = [
       'Ejecución de proyecto civiles y electromecánicos, combinando ingeniería especializada y de calidad para los diferentes sectores. ',
     icon: FaProjectDiagram,
     image: '/assets/images/Proyectos Civiles.jpeg',
+    imagePosition: 'center 30%',
   },
   {
     id: 6,
@@ -57,7 +58,9 @@ const services = [
     description:
       'Diseño y desarrollo de espacios interiores, incorporando acabados de calidad y soluciones creativas. ',
     icon: FaDraftingCompass,
-    image: '/assets/images/Melamine y muebles.jpeg',
+    image: '/assets/images/Acabados y arquitectura.jpeg',
+    imagePosition: 'center 20%',
+
   },
   {
     id: 7,
@@ -66,7 +69,7 @@ const services = [
     description:
       'Diseño y fabricación e implementación de campamentos modulares para operaciones mineras e industriales; garantizando la seguridad, funcionalidad y eficiencia operativa. ',
     icon: FaCampground,
-    image: 'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
+    image: '/assets/images/Campamentos Minerales.jpeg',
   },
   {
     id: 8,
@@ -75,7 +78,7 @@ const services = [
     description:
       'Aplicamos sistemas de pintura y recubrimiento de alto desempeño para proyectos residenciales, comerciales e industriales. Garantizamos uniformidad, durabilidad y acabados de precisión, cumpliendo estándares técnicos y estéticos en cada superficie intervenida.',
     icon: FaPaintRoller,
-    image: '/assets/images/Gasfiteria y saneamiento.jpeg',
+    image: 'public/assets/images/pintura y recubrimiento.webp',
   },
 ];
 
@@ -128,6 +131,7 @@ export default function Services() {
                     alt={service.title}
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    style={service.imagePosition ? { objectPosition: service.imagePosition } : undefined}
                   />
                   <div className="absolute inset-0 bg-blue-900 opacity-20 group-hover:opacity-10 transition-opacity" />
                 </div>

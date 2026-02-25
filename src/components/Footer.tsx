@@ -92,13 +92,39 @@ export default function Footer() {
             {/* Nav Columns */}
             <div className="lg:col-span-2">
               <FadeIn direction="up" delay={0.2}>
-                <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-blue-400 mb-8 px-1">KREA (Obras)</h4>
+                <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-white/90 mb-8 px-1">Navegación</h4>
                 <ul className="space-y-4">
                   {[
-                    { name: "Drywall & Estructuras", to: "/servicios" },
-                    { name: "Instalaciones", to: "/servicios" },
-                    { name: "Remodelaciones", to: "/servicios" },
-                    { name: "Melamina", to: "/servicios" }
+                    { name: "Inicio", to: "/" },
+                    { name: "Nosotros", to: "/nosotros" },
+                    { name: "Servicios", to: "/servicios" },
+                    { name: "Productos", to: "/productos" },
+                    { name: "Portafolio", to: "/portafolio" },
+                    { name: "Blog", to: "/blog" },
+                    { name: "Contacto", to: "/contacto" },
+                  ].map((link, i) => (
+                    <li key={i}>
+                      <Link to={link.to} className="text-white/50 hover:text-white transition-colors text-sm flex items-center gap-2 group">
+                        <span className="w-1 h-1 bg-blue-500 rounded-full group-hover:w-2 transition-all" />
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </FadeIn>
+            </div>
+
+            <div className="lg:col-span-2">
+              <FadeIn direction="up" delay={0.3}>
+                <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-blue-400 mb-8 px-1">KREA (Servicios)</h4>
+                <ul className="space-y-4">
+                  {[
+                    { name: "Drywall & Estructuras", to: "/servicios/drywall-estructuras" },
+                    { name: "Melamina y Muebles", to: "/servicios/melamina-muebles" },
+                    { name: "Instalaciones Eléctricas", to: "/servicios/instalaciones-electricas" },
+                    { name: "Gasfitería y Saneamiento", to: "/servicios/gasfiteria-saneamiento" },
+                    { name: "Proyectos Civiles", to: "/servicios/proyectos-civiles-electromecanicos" },
+                    { name: "Acabados & Arquitectura", to: "/servicios/acabados-arquitectura-interior" },
                   ].map((link, i) => (
                     <li key={i}>
                       <Link to={link.to} className="text-white/50 hover:text-white transition-colors text-sm flex items-center gap-2 group">
@@ -110,40 +136,31 @@ export default function Footer() {
                 </ul>
               </FadeIn>
             </div>
-
             <div className="lg:col-span-2">
-              <FadeIn direction="up" delay={0.3}>
+              <FadeIn direction="up" delay={0.35}>
                 <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-green-400 mb-8 px-1">TERRA (Origen)</h4>
-                <ul className="space-y-4">
+                <ul className="space-y-4 mb-6">
                   {[
                     { name: "Cacao Orgánico", to: "/productos" },
                     { name: "Chocolate Premium", to: "/productos" },
                     { name: "Café de Altura", to: "/productos" },
-                    { name: "Aceites Naturales", to: "/productos" }
+                    { name: "Aceites Naturales", to: "/productos" },
                   ].map((link, i) => (
                     <li key={i}>
                       <Link to={link.to} className="text-white/50 hover:text-white transition-colors text-sm flex items-center gap-2 group">
-                        <span className="w-1 h-1 bg-green-800 rounded-full group-hover:w-2 transition-all" />
+                        <span className="w-1 h-1 bg-green-700 rounded-full group-hover:w-2 transition-all" />
                         {link.name}
                       </Link>
                     </li>
                   ))}
                 </ul>
-              </FadeIn>
-            </div>
-            <div className="lg:col-span-2">
-              <FadeIn direction="up" delay={0.35}>
-                <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-white/90 mb-8 px-1">Talento K&T</h4>
-                <div className="flex flex-col gap-4">
-                  <p className="text-[11px] text-white/40 leading-relaxed uppercase tracking-widest">¿Quieres ser parte de nuestro equipo?</p>
-                  <Link
-                    to="/contacto"
-                    className="inline-flex items-center gap-2 px-5 py-3 bg-white/5 border border-white/10 rounded-xl text-white font-semibold text-xs hover:bg-white/10 hover:border-white/20 transition-all duration-300 group whitespace-nowrap"
-                  >
-                    <FiBriefcase className="text-blue-400 group-hover:scale-110 transition-transform" />
-                    Trabaja con nosotros
-                  </Link>
-                </div>
+                <Link
+                  to="/contacto"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-white/5 border border-white/10 rounded-xl text-white font-semibold text-xs hover:bg-white/10 hover:border-white/20 transition-all duration-300 group whitespace-nowrap"
+                >
+                  <FiBriefcase className="text-blue-400 group-hover:scale-110 transition-transform" />
+                  Trabaja con nosotros
+                </Link>
               </FadeIn>
             </div>
 

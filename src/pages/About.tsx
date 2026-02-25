@@ -49,7 +49,7 @@ export default function About() {
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-6 italic">MISIÓN</h3>
                 <p className="text-lg text-gray-600 leading-relaxed font-light">
-                  Nuestra misión es <span className="text-blue-900 font-medium italic">diseñar y ejecutar</span>
+                  Nuestra misión es <span className="text-blue-900 font-medium italic"> diseñar y ejecutar </span>
                   infraestructura de alto valor, garantizando
                   estándares superiores de calidad y
                   acabados de excelencia en cada proyecto,
@@ -66,50 +66,105 @@ export default function About() {
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-6 italic">VISIÓN</h3>
                 <p className="text-lg text-gray-600 leading-relaxed font-light">
-                  Ser el hub empresarial referente en Perú en<span className="text-green-700 font-medium italic">infraestructura y agroindustria,</span> reconocido como socio estratégico clave en proyectos de
+                  Ser el hub empresarial referente en Perú en<span className="text-green-700 font-medium italic"> infraestructura y agroindustria,</span> reconocido como socio estratégico clave en proyectos de
                   gran envergadura y en agroexportación de calidad mundial.
                 </p>
               </FadeIn>
             </div>
 
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-16 mb-24 scale-90 sm:scale-100">
-              <FadeIn direction="up" delay={0.2} className="relative group text-center">
-                <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col items-center justify-center text-slate-900 transform transition-all duration-500 group-hover:shadow-xl group-hover:border-blue-900/20 group-hover:-translate-y-2">
-                  <div className="text-center">
-                    <div className="font-bold text-2xl sm:text-3xl mb-1 sm:mb-2 text-blue-900 uppercase">Krea</div>
-                    <div className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-slate-400">Servicios</div>
-                  </div>
-                </div>
-                <p className="mt-6 text-sm text-slate-600 leading-relaxed max-w-[200px] mx-auto">
-                  Infraestructura y acabados de excelencia.
-                </p>
+            {/* Workflow: Krea + Terra → HUB DE ALIANZAS */}
+            <div className="mb-24">
+              {/* Label */}
+              <FadeIn direction="up" delay={0.1} className="text-center mb-12">
+                <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400">Modelo de Integración</span>
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mt-2 uppercase tracking-tight">
+                  Nuestro <span className="text-blue-900">Ecosistema</span>
+                </h3>
               </FadeIn>
 
-              <FadeIn direction="up" delay={0.4} className="relative group text-center lg:mt-8">
-                <div className="w-56 h-56 sm:w-64 sm:h-64 rounded-2xl bg-slate-950 text-white shadow-2xl flex flex-col items-center justify-center transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-blue-900/40 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 to-green-900/40 opacity-50" />
-                  <div className="relative z-10 text-center">
-                    <div className="font-bold text-2xl sm:text-3xl mb-1 tracking-tight">HUB DE</div>
-                    <div className="font-bold text-2xl sm:text-3xl tracking-tight text-blue-400">ALIANZAS</div>
-                  </div>
-                </div>
-                <p className="mt-6 text-sm text-slate-700 leading-relaxed font-semibold max-w-[240px] mx-auto uppercase tracking-tighter">
-                  Un modelo integrado que une sectores estratégicos para construir sinergias extraordinarias.
-                </p>
-              </FadeIn>
+              {/* Nodes */}
+              <div className="flex flex-col lg:flex-row items-center justify-center">
 
-              <FadeIn direction="up" delay={0.6} className="relative group text-center">
-                <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col items-center justify-center text-slate-900 transform transition-all duration-500 group-hover:shadow-xl group-hover:border-green-800/20 group-hover:-translate-y-2">
-                  <div className="text-center">
-                    <div className="font-bold text-2xl sm:text-3xl mb-1 sm:mb-2 text-green-800 uppercase">Terra</div>
-                    <div className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-slate-400">Productos</div>
+                {/* KREA */}
+                <FadeIn direction="left" delay={0.2} className="flex flex-col lg:flex-row items-center">
+                  <Link to="/servicios" className="group flex-shrink-0 text-center">
+                    <div className="w-44 h-44 sm:w-48 sm:h-48 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col items-center justify-center transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1 group-hover:border-blue-900/20">
+                      <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mb-3">
+                        <svg className="w-5 h-5 text-blue-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                      </div>
+                      <div className="font-bold text-lg text-blue-900 uppercase tracking-wide">Krea</div>
+                      <div className="text-[9px] font-semibold uppercase tracking-widest text-slate-400 mt-1">Servicios</div>
+                    </div>
+                    <p className="mt-4 text-xs text-slate-500 max-w-[160px] mx-auto leading-relaxed">
+                      Infraestructura y acabados de excelencia
+                    </p>
+                  </Link>
+
+                  {/* Connector → HUB */}
+                  <div className="my-5 lg:my-0 lg:mx-6 flex flex-col lg:flex-row items-center gap-1">
+                    <div className="w-px h-8 lg:w-12 lg:h-px border-l-2 lg:border-l-0 lg:border-t-2 border-dashed border-slate-300" />
+                    <svg className="w-3 h-3 text-slate-400 rotate-90 lg:rotate-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M14 10l-5 5V5l5 5z" />
+                    </svg>
                   </div>
-                </div>
-                <p className="mt-6 text-sm text-slate-600 leading-relaxed max-w-[200px] mx-auto">
-                  Productos agroindustriales de origen que promueven prácticas sostenibles y comercio justo.
-                </p>
-              </FadeIn>
+                </FadeIn>
+
+                {/* HUB DE ALIANZAS */}
+                <FadeIn direction="up" delay={0.4} className="flex-shrink-0 z-10 text-center my-2 lg:my-0">
+                  <Link to="/nosotros" className="group block">
+                    <div className="w-52 h-52 sm:w-60 sm:h-60 rounded-2xl bg-slate-900 text-white border border-slate-800 shadow-xl flex flex-col items-center justify-center transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-1 relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-green-900/20" />
+                      <div className="relative z-10 text-center px-4">
+                        <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mx-auto mb-4">
+                          <svg className="w-5 h-5 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                          </svg>
+                        </div>
+                        <div className="font-bold text-xl tracking-tight leading-tight">HUB DE</div>
+                        <div className="font-bold text-xl tracking-tight text-blue-300">ALIANZAS</div>
+                        <div className="mt-3 h-px w-8 bg-white/20 mx-auto" />
+                        <p className="mt-3 text-[10px] text-white/40 uppercase tracking-widest font-medium">
+                          Núcleo estratégico
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                  <p className="mt-4 text-xs text-slate-500 max-w-[180px] mx-auto leading-relaxed">
+                    Un modelo integrado que une sectores estratégicos
+                  </p>
+                </FadeIn>
+
+                {/* Connector HUB → TERRA */}
+                <FadeIn direction="right" delay={0.6} className="flex flex-col lg:flex-row items-center">
+                  <div className="my-5 lg:my-0 lg:mx-6 flex flex-col lg:flex-row items-center gap-1">
+                    <svg className="w-3 h-3 text-slate-400 rotate-90 lg:rotate-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M14 10l-5 5V5l5 5z" />
+                    </svg>
+                    <div className="w-px h-8 lg:w-12 lg:h-px border-l-2 lg:border-l-0 lg:border-t-2 border-dashed border-slate-300" />
+                  </div>
+
+                  {/* TERRA */}
+                  <Link to="/productos" className="group flex-shrink-0 text-center">
+                    <div className="w-44 h-44 sm:w-48 sm:h-48 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col items-center justify-center transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1 group-hover:border-green-700/20">
+                      <div className="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center mb-3">
+                        <svg className="w-5 h-5 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+                        </svg>
+                      </div>
+                      <div className="font-bold text-lg text-green-700 uppercase tracking-wide">Terra</div>
+                      <div className="text-[9px] font-semibold uppercase tracking-widest text-slate-400 mt-1">Productos</div>
+                    </div>
+                    <p className="mt-4 text-xs text-slate-500 max-w-[160px] mx-auto leading-relaxed">
+                      Productos agroindustriales de origen que promueven prácticas sostenibles y comercio justo.
+                    </p>
+                  </Link>
+                </FadeIn>
+
+              </div>
             </div>
+
           </div>
         </div>
       </section>

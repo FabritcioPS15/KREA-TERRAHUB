@@ -6,28 +6,28 @@ import FadeIn from '../components/FadeIn';
 const products = [
   {
     id: 1,
-    name: 'Cacao Orgánico',
+    name: 'Cacao de origen Orgánico',
     price: '$25.00',
     description: 'Cacao orgánico de origen certificado, cultivado de manera sostenible en nuestras tierras.',
     image: 'https://images.pexels.com/photos/4022090/pexels-photo-4022090.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
   },
   {
     id: 2,
-    name: 'Chocolate Artesanal',
+    name: 'Café',
     price: '$35.00',
     description: 'Chocolate premium elaborado artesanalmente con cacao de primera calidad.',
     image: 'https://images.pexels.com/photos/918327/pexels-photo-918327.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
   },
   {
     id: 3,
-    name: 'Café de Altura',
+    name: 'Quinua periada y Maca en Polvo',
     price: '$28.00',
     description: 'Café de altura seleccionado, tostado y empacado con los más altos estándares de calidad.',
     image: 'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
   },
   {
     id: 4,
-    name: 'Aceites Naturales',
+    name: 'Frutas deshidratadas(Mango,Aguaymanto y Piña)',
     price: '$30.00',
     description: 'Aceites naturales extraídos de productos orgánicos, ideales para uso culinario y cosmético.',
     image: 'https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=600&fm=webp',
@@ -91,7 +91,7 @@ export default function Products() {
                   <p className="text-gray-600 text-sm mb-6 leading-relaxed">{product.description}</p>
                   <button className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-md hover:bg-green-700 transition-all duration-300 font-medium text-sm tracking-wide">
                     <FiShoppingCart size={18} />
-                    Añadir al Carrito
+                    Agendar Reunión
                   </button>
                 </div>
               </FadeIn>

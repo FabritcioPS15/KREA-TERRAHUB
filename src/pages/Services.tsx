@@ -46,7 +46,7 @@ const services = [
     slug: 'proyectos-civiles-electromecanicos',
     title: 'Proyectos Civiles y Electromecánicos',
     description:
-      'Ejecución de proyecto civiles y electromecánicos, combinando ingeniería especializada y de calidad para los diferentes sectores. ',
+      'Proyectos civiles y electromecánicos con ingeniería especializada y calidad garantizada.',
     icon: FaProjectDiagram,
     image: '/assets/images/Proyectos Civiles.jpeg',
     imagePosition: 'center 30%',
@@ -67,7 +67,7 @@ const services = [
     slug: 'campamentos-minerales-industriales',
     title: 'Campamentos Mineros e Industriales',
     description:
-      'Diseño y fabricación e implementación de campamentos modulares para operaciones mineras e industriales; garantizando la seguridad, funcionalidad y eficiencia operativa. ',
+      'Soluciones modulares para campamentos mineros e industriales, enfocadas en seguridad y eficiencia.',
     icon: FaCampground,
     image: '/assets/images/Campamentos Minerales.jpeg',
   },
@@ -76,7 +76,7 @@ const services = [
     slug: 'pintura-revestimiento',
     title: 'Pintura & Revestimiento',
     description:
-      'Aplicamos sistemas de pintura y recubrimiento de alto desempeño para proyectos residenciales, comerciales e industriales. Garantizamos uniformidad, durabilidad y acabados de precisión, cumpliendo estándares técnicos y estéticos en cada superficie intervenida.',
+      'Pintura y recubrimientos de alto desempeño con durabilidad y acabados de precisión.',
     icon: FaPaintRoller,
     image: '/assets/images/pintura y recubrimiento.webp',
   },

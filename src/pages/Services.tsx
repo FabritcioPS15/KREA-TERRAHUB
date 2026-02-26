@@ -65,7 +65,7 @@ const services = [
   {
     id: 7,
     slug: 'campamentos-minerales-industriales',
-    title: 'Campamentos Minerales e Industriales',
+    title: 'Campamentos Mineros e Industriales',
     description:
       'Diseño y fabricación e implementación de campamentos modulares para operaciones mineras e industriales; garantizando la seguridad, funcionalidad y eficiencia operativa. ',
     icon: FaCampground,
@@ -183,9 +183,7 @@ export default function Services() {
             <FadeIn direction="up">
               <h2 className="text-3xl font-bold text-gray-800 mb-6">Calidad Garantizada</h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                Contamos con un equipo de profesionales especializados y años de experiencia en el sector
-                construcción. Utilizamos materiales de primera calidad y tecnología moderna para garantizar
-                resultados excepcionales en cada proyecto.
+                Contamos con profesionales especializados que emplean materiales de alta calidad y tecnología moderna para garantizar resultados excepcionales en cada proyecto.
               </p>
             </FadeIn>
             <div className="grid md:grid-cols-3 gap-8 mt-12">
@@ -197,7 +195,7 @@ export default function Services() {
               </FadeIn>
               <FadeIn direction="up" delay={0.2} className="text-center">
                 <div className="text-4xl font-bold text-blue-900 mb-2">
-                  <Counter value={15} suffix="+" />
+                  <Counter value={10} suffix="+" />
                 </div>
                 <div className="text-gray-600">Años de Experiencia</div>
               </FadeIn>

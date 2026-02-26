@@ -157,8 +157,7 @@ export default function About() {
                       <div className="text-[9px] font-semibold uppercase tracking-widest text-slate-400 mt-1">Productos</div>
                     </div>
                     <p className="mt-4 text-xs text-slate-500 max-w-[160px] mx-auto leading-relaxed">
-                      Productos agroindustriales de origen que promueven prácticas sostenibles y comercio justo.
-                    </p>
+                      Productos agroindustriales de origen sostenible y comercio justo.                    </p>
                   </Link>
                 </FadeIn>
 

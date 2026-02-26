@@ -40,8 +40,7 @@ export default function Products() {
       <section
         className="relative py-20 bg-cover bg-center"
         style={{
-          backgroundImage:
-            'url(https://images.pexels.com/photos/4022090/pexels-photo-4022090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)',
+          backgroundImage: "url('/assets/images/Agroindustria.jpeg')",
         }}
       >
         <div className="absolute inset-0 bg-slate-950/60" />

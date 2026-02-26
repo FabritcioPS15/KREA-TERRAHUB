@@ -13,6 +13,8 @@ const Contact = lazy(() => import('./pages/Contact'));
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const Blog = lazy(() => import('./pages/Blog'));
+const Privacy = lazy(() => import('./pages/Privacy'));
+const Terms = lazy(() => import('./pages/Terms'));
 
 // Componente de carga simple
 const PageLoader = () => (
@@ -48,6 +50,8 @@ function App() {
               <Route path="/portafolio" element={<Portfolio />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/contacto" element={<Contact />} />
+              <Route path="/privacidad" element={<Privacy />} />
+              <Route path="/terminos" element={<Terms />} />
             </Routes>
           </Suspense>
         </main>

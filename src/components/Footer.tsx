@@ -46,11 +46,11 @@ export default function Footer() {
         <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-[#020617] via-[#020617]/80 to-transparent pointer-events-none z-10" />
         <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-blue-900/20 via-green-900/10 to-transparent pointer-events-none z-0 opacity-50 blur-3xl animate-pulse" />
 
-        <div className="relative z-10 container mx-auto px-6 pt-24 pb-12">
+        <div className="relative z-10 container mx-auto px-6 pt-16 md:pt-24 pb-12">
           {/* Top CTA Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-12 mb-20">
             {/* Identity Column */}
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-3 flex flex-col items-center md:items-start text-center md:text-left">
               <FadeIn direction="up" delay={0.1}>
                 <Link to="/" className="inline-block mb-8">
                   <div className="flex items-center gap-4 bg-white/5 p-3 rounded-2xl border border-white/10 backdrop-blur-sm">
@@ -60,16 +60,16 @@ export default function Footer() {
                       className="h-12 w-auto object-contain"
                       loading="lazy"
                     />
-                    <div className="flex flex-col">
+                    <div className="flex flex-col text-left">
                       <span className="font-bold text-sm tracking-tight bg-gradient-to-r from-blue-200 to-green-200 bg-clip-text text-transparent uppercase">KREA & TERRA HUB</span>
                       <span className="text-[10px] text-white/50 font-medium tracking-widest">EXCELLENCE HUB S.A.C.</span>
                     </div>
                   </div>
                 </Link>
-                <p className="text-white/50 text-base leading-relaxed mb-6 max-w-sm">
+                <p className="hidden md:block text-white/50 text-base leading-relaxed mb-6 max-w-sm">
                   Un HUB empresarial estratégico que fusiona la excelencia en infraestructura con la pureza agroindustrial de origen. Construimos futuro, cultivamos legado.
                 </p>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 justify-center md:justify-start">
                   {[
                     { icon: FaFacebookF, href: "#", label: "Facebook" },
                     { icon: FaInstagram, href: "#", label: "Instagram" },
@@ -90,7 +90,7 @@ export default function Footer() {
             </div>
 
             {/* Nav Columns */}
-            <div className="lg:col-span-2">
+            <div className="hidden md:block lg:col-span-2">
               <FadeIn direction="up" delay={0.2}>
                 <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-white/90 mb-8 px-1">Navegación</h4>
                 <ul className="space-y-4">
@@ -136,8 +136,8 @@ export default function Footer() {
                 </ul>
               </FadeIn>
             </div>
-            <div className="lg:col-span-2">
-              <FadeIn direction="up" delay={0.35}>
+            <div className="hidden md:block lg:col-span-2">
+              <FadeIn direction="up" delay={0.3}>
                 <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-green-400 mb-8 px-1">TERRA (Origen)</h4>
                 <ul className="space-y-4 mb-6">
                   {[
@@ -154,28 +154,37 @@ export default function Footer() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  to="/contacto"
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-white/5 border border-white/10 rounded-xl text-white font-semibold text-xs hover:bg-white/10 hover:border-white/20 transition-all duration-300 group whitespace-nowrap"
-                >
-                  <FiBriefcase className="text-blue-400 group-hover:scale-110 transition-transform" />
-                  Trabaja con nosotros
-                </Link>
+              </FadeIn>
+            </div>
+
+            <div className="hidden md:block lg:col-span-2">
+              <FadeIn direction="up" delay={0.35}>
+                <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-white/90 mb-8 px-1">Talento K&T</h4>
+                <div className="flex flex-col gap-4">
+                  <p className="text-[11px] text-white/40 leading-relaxed uppercase tracking-widest">¿Quieres ser parte de nuestro equipo?</p>
+                  <Link
+                    to="/contacto"
+                    className="inline-flex items-center gap-2 px-5 py-3 bg-white/5 border border-white/10 rounded-xl text-white font-semibold text-xs hover:bg-white/10 hover:border-white/20 transition-all duration-300 group whitespace-nowrap"
+                  >
+                    <FiBriefcase className="text-blue-400 group-hover:scale-110 transition-transform" />
+                    Trabaja con nosotros
+                  </Link>
+                </div>
               </FadeIn>
             </div>
 
             {/* Contact Column */}
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-3 flex flex-col items-center md:items-start text-center md:text-left">
               <FadeIn direction="up" delay={0.4}>
                 <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-white/90 mb-8 px-1">Atención HUB</h4>
-                <div className="space-y-6">
-                  <a href="tel:+516802256956" className="flex items-start gap-4 group">
+                <div className="space-y-6 flex flex-col items-center md:items-start">
+                  <a href="tel:+51987654321" className="flex items-start gap-4 group">
                     <div className="w-10 h-10 rounded-xl bg-blue-900/20 border border-blue-400/20 flex items-center justify-center text-blue-400 group-hover:bg-blue-400 group-hover:text-white transition-all duration-300">
                       <FiPhone size={18} />
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col text-left">
                       <span className="text-[10px] text-white/40 uppercase font-bold tracking-widest mb-1">Central Telefónica</span>
-                      <span className="text-white font-medium group-hover:text-blue-200 transition-colors">(680) 225-6956</span>
+                      <span className="text-white font-medium group-hover:text-blue-200 transition-colors">+51 987 654 321</span>
                     </div>
                   </a>
 
@@ -183,7 +192,7 @@ export default function Footer() {
                     <div className="w-10 h-10 rounded-xl bg-green-900/20 border border-green-400/20 flex items-center justify-center text-green-400 group-hover:bg-green-400 group-hover:text-white transition-all duration-300">
                       <FiMail size={18} />
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col text-left">
                       <span className="text-[10px] text-white/40 uppercase font-bold tracking-widest mb-1">Correo Corporativo</span>
                       <span className="text-white font-medium group-hover:text-green-200 transition-colors">krea@terrahub.com</span>
                     </div>
@@ -197,8 +206,8 @@ export default function Footer() {
           <div className="border-t border-white/10 pt-8 pb-4">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-8 text-[11px] font-medium text-white/30 uppercase tracking-[0.2em]">
-                <span className="flex items-center gap-2"><FiShield className="text-blue-500" /> Privacidad</span>
-                <span className="flex items-center gap-2"><FiBriefcase className="text-green-500" /> Términos</span>
+                <Link to="/privacidad" className="flex items-center gap-2 hover:text-white transition-colors"><FiShield className="text-blue-500" /> Privacidad</Link>
+                <Link to="/terminos" className="flex items-center gap-2 hover:text-white transition-colors"><FiBriefcase className="text-green-500" /> Términos</Link>
               </div>
               <div className="text-[10px] font-bold text-white/20 uppercase tracking-[0.4em] text-center md:text-right">
                 © {currentYear} KREA & TERRA HUB S.A.C. — Lima, Perú

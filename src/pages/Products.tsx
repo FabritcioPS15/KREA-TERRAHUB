@@ -1,4 +1,4 @@
-import { FiAward, FiHeart, FiShoppingCart, FiHome, FiChevronRight } from 'react-icons/fi';
+import { FiAward, FiHeart, FiHome, FiChevronRight, FiDownload, FiCalendar } from 'react-icons/fi';
 import { FaLeaf } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import FadeIn from '../components/FadeIn';
@@ -7,30 +7,26 @@ const products = [
   {
     id: 1,
     name: 'Cacao de origen Orgánico',
-    price: '$25.00',
     description: 'Cacao orgánico de origen certificado, cultivado de manera sostenible en nuestras tierras.',
     image: 'https://images.pexels.com/photos/4022090/pexels-photo-4022090.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
   },
   {
     id: 2,
     name: 'Café',
-    price: '$35.00',
     description: 'Chocolate premium elaborado artesanalmente con cacao de primera calidad.',
     image: 'https://images.pexels.com/photos/918327/pexels-photo-918327.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
   },
   {
     id: 3,
     name: 'Quinua periada y Maca en Polvo',
-    price: '$28.00',
     description: 'Café de altura seleccionado, tostado y empacado con los más altos estándares de calidad.',
     image: 'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
   },
   {
     id: 4,
-    name: 'Frutas deshidratadas(Mango,Aguaymanto y Piña)',
-    price: '$30.00',
+    name: 'Frutas deshidratadas (Mango,Aguaymanto y Piña)',
     description: 'Aceites naturales extraídos de productos orgánicos, ideales para uso culinario y cosmético.',
-    image: 'https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=600&fm=webp',
+    image: '/assets/images/Fruta deshidratada.jpeg',
   },
 ];
 
@@ -87,11 +83,14 @@ export default function Products() {
                 </div>
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-bold text-gray-800 mb-2">{product.name}</h3>
-                  <div className="text-2xl font-bold text-green-700 mb-3">{product.price}</div>
-                  <p className="text-gray-600 text-sm mb-6 leading-relaxed">{product.description}</p>
-                  <button className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-md hover:bg-green-700 transition-all duration-300 font-medium text-sm tracking-wide">
-                    <FiShoppingCart size={18} />
-                    Agendar Reunión
+                  <button className="w-full mb-3 flex items-center justify-center gap-2 px-6 py-2.5 bg-white border-2 border-slate-900 text-slate-900 rounded-xl hover:bg-slate-900 hover:text-white transition-all duration-300 font-bold text-sm tracking-tight group shadow-sm hover:shadow-md active:scale-[0.98]">
+                    <FiDownload className="group-hover:-translate-y-1 transition-transform duration-300" />
+                    Descargar Ficha Técnica
+                  </button>
+                  <p className="text-gray-600 text-sm mb-6 leading-relaxed line-clamp-2">{product.description}</p>
+                  <button className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-900 text-white rounded-xl hover:bg-green-600 transition-all duration-300 font-bold text-sm tracking-tight shadow-md hover:shadow-xl hover:shadow-green-900/20 active:scale-[0.98] group/btn">
+                    <FiCalendar size={18} className="group-hover/btn:rotate-12 transition-transform" />
+                    Agendar Reunión Comercial
                   </button>
                 </div>
               </FadeIn>

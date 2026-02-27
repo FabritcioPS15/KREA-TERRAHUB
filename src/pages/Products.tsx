@@ -12,9 +12,9 @@ const products = [
   },
   {
     id: 2,
-    name: 'Café',
+    name: 'Café verde',
     description: 'Chocolate premium elaborado artesanalmente con cacao de primera calidad.',
-    image: 'https://images.pexels.com/photos/918327/pexels-photo-918327.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
+    image: '/assets/images/Cafe verde.jpeg',
   },
   {
     id: 3,

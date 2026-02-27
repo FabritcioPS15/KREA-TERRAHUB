@@ -83,8 +83,8 @@ export default function Products() {
                 </div>
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-bold text-gray-800 mb-2">{product.name}</h3>
-                  <button className="w-full mb-3 flex items-center justify-center gap-2 px-6 py-2.5 bg-white border-2 border-slate-900 text-slate-900 rounded-xl hover:bg-slate-900 hover:text-white transition-all duration-300 font-bold text-sm tracking-tight group shadow-sm hover:shadow-md active:scale-[0.98]">
-                    <FiDownload className="group-hover:-translate-y-1 transition-transform duration-300" />
+                  <button className="w-full mb-3 flex items-center justify-center gap-2 px-6 py-2.5 bg-white border-2 border-slate-900 text-slate-900 rounded-xl hover:bg-slate-900 hover:text-white transition-all duration-300 font-bold text-sm tracking-tight group/btn shadow-sm hover:shadow-md active:scale-[0.98]">
+                    <FiDownload className="group-hover/btn:-translate-y-1 transition-transform duration-300" />
                     Descargar Ficha Técnica
                   </button>
                   <p className="text-gray-600 text-sm mb-6 leading-relaxed whitespace-normal break-words">

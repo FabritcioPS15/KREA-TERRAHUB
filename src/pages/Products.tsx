@@ -18,8 +18,8 @@ const products = [
   },
   {
     id: 3,
-    name: 'Maca en Polvo',
-    description: 'Maca en polvo, suplemento natural rico en nutrientes y antioxidantes; aporta energía y bienestar.',
+    name: 'Harina de maca gelatinizada',
+    description: 'Maca gelatinizada de alta calidad, fácil de digerir y rica en energía natural.',
     image: 'assets/images/Maca en polvo.jfif',
   },
   {

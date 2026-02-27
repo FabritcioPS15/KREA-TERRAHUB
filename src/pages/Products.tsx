@@ -70,8 +70,13 @@ export default function Products() {
                 key={product.id}
                 direction="up"
                 delay={index * 0.1}
-                className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                className="relative bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
               >
+                {/* diagonal green overlay (aparece al hover de la card) */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                  <div className="absolute -top-8 -left-6 w-[70%] h-[50%] bg-green-500 opacity-0 -rotate-12 transform transition-all duration-500 group-hover:opacity-[0.35] pointer-events-none" />
+                </div>
+
                 <div className="relative h-56 overflow-hidden">
                   <img
                     src={product.image}

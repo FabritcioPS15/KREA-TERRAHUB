@@ -123,7 +123,7 @@ export default function Services() {
 
           <FadeIn direction="up" delay={0.2} className="text-center px-4">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 tracking-tight leading-tight">
-              INFRAESTRUCTURA Y<span className="text-blue-400 italic font-light">ACABADOS</span>
+              INFRAESTRUCTURA Y <span className="text-blue-400 italic font-light">ACABADOS</span>
               <br className="hidden sm:block" /> DE EXCELENCIA
             </h1>
           </FadeIn>
@@ -133,46 +133,55 @@ export default function Services() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <FadeIn
-                key={service.id}
-                direction="up"
-                delay={index * 0.1}
-                className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
-              >
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    style={service.imagePosition ? { objectPosition: service.imagePosition } : undefined}
-                  />
-                  <div className="absolute inset-0 bg-blue-900 opacity-20 group-hover:opacity-10 transition-opacity" />
-                </div>
-                <div className="p-6 text-center">
-                  <div className="flex justify-center mb-4">
-                    <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center">
-                      <service.icon className="text-white" size={32} />
+            {services.map((service, index) => {
+              // usar un azul más oscuro para las cards
+              const colorClass = 'bg-blue-900';
+               return (
+                <FadeIn
+                  key={service.id}
+                  direction="up"
+                  delay={index * 0.1}
+                  className="relative bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                >
+                  {/* diagonal accent overlay (aparece al hover de la card) */}
+                  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                    <div className={`${colorClass} absolute -top-8 -left-6 w-[70%] h-[50%] opacity-0 -rotate-12 transform transition-all duration-500 group-hover:opacity-[0.35] pointer-events-none`} />
+                  </div>
+
+                  <div className="relative h-56 overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      style={service.imagePosition ? { objectPosition: service.imagePosition } : undefined}
+                    />
+                    <div className="absolute inset-0 bg-blue-900 opacity-20 group-hover:opacity-10 transition-opacity" />
+                  </div>
+                  <div className="p-6 text-center">
+                    <div className="flex justify-center mb-4">
+                      <div className={`w-16 h-16 ${colorClass} rounded-full flex items-center justify-center`}>
+                        <service.icon className="text-white" size={32} />
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">{service.title}</h3>
+                    <p className="text-gray-600 text-sm mb-6 leading-relaxed">{service.description}</p>
+                    <div className="flex flex-col gap-3">
+                      <Link
+                        to={`/servicios/${service.slug}`}
+                        className="w-full px-6 py-3 bg-white border border-slate-900 text-slate-900 rounded-md hover:bg-slate-50 transition-all duration-300 font-medium text-sm tracking-wide flex items-center justify-center gap-1 group/btn"
+                      >
+                        Conoce más
+                        <FiChevronRight className="group-hover/btn:translate-x-1 transition-transform" />
+                      </Link>
+                      <button className="w-full px-6 py-3 bg-slate-900 text-white rounded-md hover:bg-slate-800 transition-all duration-300 font-medium text-sm tracking-wide">
+                        Solicitar Cotización
+                      </button>
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">{service.title}</h3>
-                  <p className="text-gray-600 text-sm mb-6 leading-relaxed">{service.description}</p>
-                  <div className="flex flex-col gap-3">
-                    <Link
-                      to={`/servicios/${service.slug}`}
-                      className="w-full px-6 py-3 bg-white border border-slate-900 text-slate-900 rounded-md hover:bg-slate-50 transition-all duration-300 font-medium text-sm tracking-wide flex items-center justify-center gap-1 group/btn"
-                    >
-                      Conoce más
-                      <FiChevronRight className="group-hover/btn:translate-x-1 transition-transform" />
-                    </Link>
-                    <button className="w-full px-6 py-3 bg-slate-900 text-white rounded-md hover:bg-slate-800 transition-all duration-300 font-medium text-sm tracking-wide">
-                      Solicitar Cotización
-                    </button>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
+                </FadeIn>
+              );
+            })}
           </div>
         </div>
       </section>

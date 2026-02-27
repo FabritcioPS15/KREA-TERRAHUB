@@ -10,7 +10,7 @@ const services = [
     slug: 'drywall-estructuras',
     title: 'Drywall & Estructuras',
     description:
-      'Construcción y diseño de estructuras en drywall para espacios modernos y funcionales con acabados de primera calidad.',
+      'Construcción y diseño de estructuras en drywall para espacios modernos con acabados de primera calidad.',
     icon: FaBuilding,
     image: '/assets/images/Drywall y estructuras.jpeg',
   },
@@ -19,7 +19,7 @@ const services = [
     slug: 'melamina-muebles',
     title: 'Melamina y Muebles',
     description:
-      'Diseño y fabricación de muebles personalizados en melamina, adaptados a tus necesidades y espacios específicos.',
+      'Diseño y fabricación de muebles personalizados en melamina, adaptados a espacios específicos.',
     icon: FaTools,
     image: '/assets/images/Melamine y muebles.jpeg',
   },
@@ -28,7 +28,7 @@ const services = [
     slug: 'instalaciones-electricas',
     title: 'Instalaciones Eléctricas',
     description:
-      'Servicios completos de instalaciones eléctricas residenciales y comerciales con estándares de seguridad certificados.',
+      'Servicios completos de instalaciones eléctricas residenciales y comerciales con estándares de seguridad',
     icon: FaBolt,
     image: 'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
   },
@@ -37,7 +37,7 @@ const services = [
     slug: 'gasfiteria-saneamiento',
     title: 'Gasfitería y Saneamiento',
     description:
-      'Instalación y mantenimiento de sistemas de gasfitería, agua y saneamiento con garantía y profesionalismo.',
+      'Instalación y mantenimiento de sistemas de gasfitería y saneamiento con garantía y profesionalismo.',
     icon: FaTint,
     image: '/assets/images/Gasfiteria y saneamiento.jpeg',
   },

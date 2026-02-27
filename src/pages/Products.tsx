@@ -18,7 +18,7 @@ const products = [
   },
   {
     id: 3,
-    name: 'Quinua periada y Maca en Polvo',
+    name: 'Quinua perlada y Maca en Polvo',
     description: 'Café de altura seleccionado, tostado y empacado con los más altos estándares de calidad.',
     image: '/assets/images/Quinua Periada.jpeg',
   },

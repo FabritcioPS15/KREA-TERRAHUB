@@ -158,12 +158,14 @@ export default function Services() {
                     />
                     <div className="absolute inset-0 bg-blue-900 opacity-20 group-hover:opacity-10 transition-opacity" />
                   </div>
-                  <div className="p-6 text-center">
-                    <div className="flex justify-center mb-4">
-                      <div className={`w-16 h-16 ${colorClass} rounded-full flex items-center justify-center`}>
-                        <service.icon className="text-white" size={32} />
-                      </div>
+                  {/* icono superpuesto: mitad sobre la imagen, mitad sobre la card (posicionado fuera del contenedor para no ser recortado) */}
+                  <div className={`absolute left-1/2 top-56 -translate-x-1/2 -translate-y-1/2 z-20`}>
+                    <div className={`${colorClass} w-16 h-16 rounded-full flex items-center justify-center shadow-lg border-4 border-white`}>
+                      <service.icon className="text-white" size={32} />
                     </div>
+                  </div>
+
+                  <div className="p-6 text-center">
                     <h3 className="text-xl font-bold text-gray-800 mb-3">{service.title}</h3>
                     <p className="text-gray-600 text-sm mb-6 leading-relaxed">{service.description}</p>
                     <div className="flex flex-col gap-3">

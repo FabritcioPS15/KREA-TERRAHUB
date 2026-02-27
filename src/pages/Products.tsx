@@ -1,5 +1,5 @@
 import { FiAward, FiHeart, FiHome, FiChevronRight, FiDownload, FiCalendar } from 'react-icons/fi';
-import { FaLeaf } from 'react-icons/fa';
+import { FaLeaf, FaCoffee, FaSeedling, FaAppleAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import FadeIn from '../components/FadeIn';
 
@@ -9,24 +9,28 @@ const products = [
     name: 'Cacao de origen',
     description: 'Cacao orgánico de origen certificado, cultivado de manera sostenible en nuestras tierras.',
     image: '/assets/images/Cacao Organico.jpeg',
+    icon: FaLeaf,
   },
   {
     id: 2,
     name: 'Café verde',
     description: 'Café de altura seleccionado, tostado y empacado con los más altos estándares de calidad.',
     image: '/assets/images/Cafe verde.jpeg',
+    icon: FaCoffee,
   },
   {
     id: 3,
     name: 'Harina de maca gelatinizada',
-    description: 'Maca gelatinizada de alta calidad, fácil de digerir y rica en energía natural.',
+    description: 'Harina de maca gelatinizada de alta calidad, fácil de digerir y rica en energía natural.',
     image: 'assets/images/Maca en polvo.jfif',
+    icon: FaSeedling,
   },
   {
     id: 4,
     name: 'Frutas deshidratadas',
     description: 'Frutas deshidratadas seleccionadas, procesadas para conservar su sabor, textura y valor nutritivo.',
     image: '/assets/images/Fruta deshidratada.jpeg',
+    icon: FaAppleAlt,
   },
 ];
 
@@ -85,6 +89,12 @@ export default function Products() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-green-900 opacity-20 group-hover:opacity-10 transition-opacity" />
+                </div>
+                {/* icono superpuesto: mitad sobre la imagen, mitad sobre la card (posicionado fuera del contenedor para que no se recorte) */}
+                <div className={`absolute left-1/2 top-56 -translate-x-1/2 -translate-y-1/2 z-20`}>
+                  <div className={`bg-green-500 w-14 h-14 rounded-full flex items-center justify-center shadow-lg border-4 border-white`}>
+                    <product.icon className="text-white" size={20} />
+                  </div>
                 </div>
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-bold text-gray-800 mb-2">{product.name}</h3>

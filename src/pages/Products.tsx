@@ -6,26 +6,26 @@ import FadeIn from '../components/FadeIn';
 const products = [
   {
     id: 1,
-    name: 'Cacao de origen Orgánico',
+    name: 'Cacao de origen',
     description: 'Cacao orgánico de origen certificado, cultivado de manera sostenible en nuestras tierras.',
     image: '/assets/images/Cacao Organico.jpeg',
   },
   {
     id: 2,
     name: 'Café verde',
-    description: 'Chocolate premium elaborado artesanalmente con cacao de primera calidad.',
+    description: 'Café de altura seleccionado, tostado y empacado con los más altos estándares de calidad.',
     image: '/assets/images/Cafe verde.jpeg',
   },
   {
     id: 3,
-    name: 'Quinua perlada y Maca en Polvo',
-    description: 'Café de altura seleccionado, tostado y empacado con los más altos estándares de calidad.',
-    image: '/assets/images/Quinua Periada.jpeg',
+    name: 'Maca en Polvo',
+    description: 'Maca en polvo, suplemento natural rico en nutrientes y antioxidantes; aporta energía y bienestar.',
+    image: 'assets/images/Maca en polvo.jfif',
   },
   {
     id: 4,
     name: 'Frutas deshidratadas',
-    description: 'Aceites naturales extraídos de productos orgánicos, ideales para uso culinario y cosmético.',
+    description: 'Frutas deshidratadas seleccionadas, procesadas para conservar su sabor, textura y valor nutritivo.',
     image: '/assets/images/Fruta deshidratada.jpeg',
   },
 ];
@@ -87,7 +87,9 @@ export default function Products() {
                     <FiDownload className="group-hover:-translate-y-1 transition-transform duration-300" />
                     Descargar Ficha Técnica
                   </button>
-                  <p className="text-gray-600 text-sm mb-6 leading-relaxed line-clamp-2">{product.description}</p>
+                  <p className="text-gray-600 text-sm mb-6 leading-relaxed whitespace-normal break-words">
+                    {product.description}
+                  </p>
                   <button className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-900 text-white rounded-xl hover:bg-green-600 transition-all duration-300 font-bold text-sm tracking-tight shadow-md hover:shadow-xl hover:shadow-green-900/20 active:scale-[0.98] group/btn">
                     <FiCalendar size={18} className="group-hover/btn:rotate-12 transition-transform" />
                     Agendar Reunión Comercial

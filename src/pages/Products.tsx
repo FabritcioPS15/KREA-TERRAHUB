@@ -28,7 +28,7 @@ const products = [
   {
     id: 4,
     name: 'Frutas deshidratadas',
-    description: 'Frutas deshidratadas seleccionadas, procesadas para conservar su sabor, textura y valor nutritivo.',
+    description: 'Frutas  seleccionadas, procesadas para conservar su sabor, textura y valor nutritivo.',
     image: '/assets/images/Fruta deshidratada.jpeg',
     icon: FaAppleAlt,
   },

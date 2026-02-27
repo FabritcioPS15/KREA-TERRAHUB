@@ -14,7 +14,7 @@ const products = [
   {
     id: 2,
     name: 'Café verde',
-    description: 'Café de altura seleccionado, tostado y empacado con los más altos estándares de calidad.',
+    description: 'Café seleccionado, tostado y empacado con los más altos estándares de calidad.',
     image: '/assets/images/Cafe verde.jpeg',
     icon: FaCoffee,
   },

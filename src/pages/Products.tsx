@@ -8,7 +8,7 @@ const products = [
     id: 1,
     name: 'Cacao de origen Orgánico',
     description: 'Cacao orgánico de origen certificado, cultivado de manera sostenible en nuestras tierras.',
-    image: 'https://images.pexels.com/photos/4022090/pexels-photo-4022090.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
+    image: '/assets/images/Cacao Organico.jpeg',
   },
   {
     id: 2,
@@ -20,11 +20,11 @@ const products = [
     id: 3,
     name: 'Quinua periada y Maca en Polvo',
     description: 'Café de altura seleccionado, tostado y empacado con los más altos estándares de calidad.',
-    image: 'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
+    image: '/assets/images/Quinua Periada.jpeg',
   },
   {
     id: 4,
-    name: 'Frutas deshidratadas (Mango,Aguaymanto y Piña)',
+    name: 'Frutas deshidratadas',
     description: 'Aceites naturales extraídos de productos orgánicos, ideales para uso culinario y cosmético.',
     image: '/assets/images/Fruta deshidratada.jpeg',
   },

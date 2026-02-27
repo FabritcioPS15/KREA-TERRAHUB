@@ -179,15 +179,6 @@ export default function Header() {
                   Producto (Terra)
                 </NavLink>
                 <NavLink
-                  to="/portafolio"
-                  ref={(el) => {
-                    linkRefs.current['/portafolio'] = el;
-                  }}
-                  className={({ isActive }) => desktopLinkClass('blue', isActive)}
-                >
-                  Portafolio
-                </NavLink>
-                <NavLink
                   to="/blog"
                   ref={(el) => {
                     linkRefs.current['/blog'] = el;
@@ -277,7 +268,6 @@ export default function Header() {
                     { to: "/nosotros", label: "Nosotros", icon: FiUsers, color: "blue" },
                     { to: "/servicios", label: "Servicios (Krea)", icon: FiBriefcase, color: "blue" },
                     { to: "/productos", label: "Producto (Terra)", icon: FiPackage, color: "green" },
-                    { to: "/portafolio", label: "Portafolio", icon: FiLayers, color: "blue" },
                     { to: "/blog", label: "Blog", icon: FiFileText, color: "blue" },
                     { to: "/contacto", label: "Contacto", icon: FiMail, color: "blue" },
                   ].map((item, idx) => (

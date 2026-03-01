@@ -6,6 +6,10 @@ import FadeIn from '../components/FadeIn';
 export default function Blog() {
     const [query, setQuery] = useState('');
 
+    const getAccent = (category: string) => {
+        return category.toLowerCase().includes('agro') ? 'green' : 'blue';
+    };
+
     const posts = useMemo(
         () => [
             {
@@ -196,23 +200,35 @@ export default function Blog() {
             >
                 <div className="absolute inset-0 bg-slate-950/60" />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40" />
-                <div className="relative z-10 container mx-auto px-6 text-white text-center">
+                <div className="relative z-10 container mx-auto px-6 text-white">
                     <FadeIn direction="up" delay={0.1}>
-                        <div className="mb-6 flex justify-center w-full">
-                            <div className="inline-flex items-center gap-2 text-sm font-medium text-white/90 bg-white/10 border border-white/20 rounded-full px-5 py-2 backdrop-blur-md shadow-sm">
-                                <Link to="/" className="flex items-center gap-2 hover:text-white transition-colors">
-                                    <FiHome size={14} />
-                                    Inicio
-                                </Link>
-                                <FiChevronRight className="text-white/50" size={14} />
-                                <span className="text-white">Blog</span>
+                        <div className="mb-6 w-full">
+                            <Link
+                                to="/"
+                                className="sm:hidden inline-flex items-center gap-1.5 text-xs font-semibold text-white/70 hover:text-white bg-white/10 border border-white/15 rounded-lg px-3 py-1.5 backdrop-blur-md transition-all duration-200 hover:bg-white/15"
+                            >
+                                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                                </svg>
+                                Inicio
+                            </Link>
+
+                            <div className="hidden sm:flex justify-center">
+                                <div className="inline-flex items-center gap-2 text-sm font-medium text-white/90 bg-white/10 border border-white/20 rounded-full px-5 py-2 backdrop-blur-md shadow-sm">
+                                    <Link to="/" className="flex items-center gap-2 hover:text-white transition-colors">
+                                        <FiHome size={14} />
+                                        Inicio
+                                    </Link>
+                                    <FiChevronRight className="text-white/50" size={14} />
+                                    <span className="text-white">Blog</span>
+                                </div>
                             </div>
                         </div>
                     </FadeIn>
 
-                    <FadeIn direction="up" delay={0.2}>
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 tracking-tight leading-tight">
-                            Blog
+                    <FadeIn direction="up" delay={0.2} className="text-center px-4">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 tracking-tight leading-tight">
+                            NUESTRO <span className="text-blue-400 italic font-light">BLOG</span>
                         </h1>
                         <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
                             Guías y novedades alineadas a nuestros servicios de infraestructura y acabados, y a nuestros productos agroindustriales.
@@ -297,7 +313,17 @@ export default function Blog() {
                                         .filter((p) => p.id !== featured.id)
                                         .map((post, idx) => (
                                             <FadeIn key={post.id} direction="up" delay={0.05 * (idx + 1)}>
-                                                <article className="group rounded-2xl border border-gray-200 overflow-hidden bg-white hover:border-gray-300 transition-colors">
+                                                <article className="group relative rounded-2xl border border-gray-200 overflow-hidden bg-white hover:border-gray-300 transition-colors">
+                                                    <div
+                                                        className={`pointer-events-none absolute -top-10 -right-10 h-28 w-28 rounded-full blur-2xl opacity-70 ${getAccent(post.category) === 'green' ? 'bg-green-600/20' : 'bg-blue-900/15'
+                                                            }`}
+                                                        aria-hidden="true"
+                                                    />
+                                                    <div
+                                                        className={`pointer-events-none absolute top-0 left-0 h-1 w-full ${getAccent(post.category) === 'green' ? 'bg-green-600/60' : 'bg-blue-900/50'
+                                                            }`}
+                                                        aria-hidden="true"
+                                                    />
                                                     <div className="relative">
                                                         <img
                                                             src={post.image}

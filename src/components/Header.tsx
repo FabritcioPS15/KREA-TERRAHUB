@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { FiMenu, FiX, FiHome, FiUsers, FiBriefcase, FiPackage, FiMail, FiPhone, FiLayers, FiFileText } from 'react-icons/fi';
+import { FiMenu, FiX, FiHome, FiUsers, FiBriefcase, FiPackage, FiMail, FiPhone, FiFileText } from 'react-icons/fi';
 import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 

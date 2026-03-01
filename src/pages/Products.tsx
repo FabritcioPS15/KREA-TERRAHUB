@@ -6,7 +6,7 @@ import FadeIn from '../components/FadeIn';
 const products = [
   {
     id: 1,
-    name: 'Cacao de origen Orgánico',
+    name: 'Cacao de origen',
     description: 'Cacao orgánico de origen certificado, cultivado de manera sostenible en nuestras tierras.',
     image: '/assets/images/Cacao Organico.jpeg',
   },
@@ -18,7 +18,7 @@ const products = [
   },
   {
     id: 3,
-    name: 'Quinua perlada y Maca en Polvo',
+    name: 'Maca en Polvo',
     description: 'Café de altura seleccionado, tostado y empacado con los más altos estándares de calidad.',
     image: '/assets/images/Quinua Periada.jpeg',
   },

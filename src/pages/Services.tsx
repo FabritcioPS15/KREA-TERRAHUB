@@ -10,7 +10,7 @@ const services = [
     slug: 'drywall-estructuras',
     title: 'Drywall & Estructuras',
     description:
-      'Construcción y diseño de estructuras en drywall para espacios modernos y funcionales con acabados de primera calidad.',
+      'Construcción y diseño de estructuras en drywall para espacios modernos con acabados de primera calidad.',
     icon: FaBuilding,
     image: '/assets/images/Drywall y estructuras.jpeg',
   },
@@ -19,7 +19,7 @@ const services = [
     slug: 'melamina-muebles',
     title: 'Melamina y Muebles',
     description:
-      'Diseño y fabricación de muebles personalizados en melamina, adaptados a tus necesidades y espacios específicos.',
+      'Diseño y fabricación de muebles personalizados en melamina, adaptados a espacios específicos.',
     icon: FaTools,
     image: '/assets/images/Melamine y muebles.jpeg',
   },
@@ -28,7 +28,7 @@ const services = [
     slug: 'instalaciones-electricas',
     title: 'Instalaciones Eléctricas',
     description:
-      'Servicios completos de instalaciones eléctricas residenciales y comerciales con estándares de seguridad certificados.',
+      'Servicios completos de instalaciones eléctricas residenciales y comerciales con estándares de seguridad',
     icon: FaBolt,
     image: 'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp',
   },
@@ -37,7 +37,7 @@ const services = [
     slug: 'gasfiteria-saneamiento',
     title: 'Gasfitería y Saneamiento',
     description:
-      'Instalación y mantenimiento de sistemas de gasfitería, agua y saneamiento con garantía y profesionalismo.',
+      'Instalación y mantenimiento de sistemas de gasfitería y saneamiento con garantía y profesionalismo.',
     icon: FaTint,
     image: '/assets/images/Gasfiteria y saneamiento.jpeg',
   },
@@ -123,7 +123,7 @@ export default function Services() {
 
           <FadeIn direction="up" delay={0.2} className="text-center px-4">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 tracking-tight leading-tight">
-              INFRAESTRUCTURA Y<span className="text-blue-400 italic font-light">ACABADOS</span>
+              INFRAESTRUCTURA Y <span className="text-blue-400 italic font-light">ACABADOS</span>
               <br className="hidden sm:block" /> DE EXCELENCIA
             </h1>
           </FadeIn>
@@ -133,46 +133,57 @@ export default function Services() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <FadeIn
-                key={service.id}
-                direction="up"
-                delay={index * 0.1}
-                className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
-              >
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    style={service.imagePosition ? { objectPosition: service.imagePosition } : undefined}
-                  />
-                  <div className="absolute inset-0 bg-blue-900 opacity-20 group-hover:opacity-10 transition-opacity" />
-                </div>
-                <div className="p-6 text-center">
-                  <div className="flex justify-center mb-4">
-                    <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center">
+            {services.map((service, index) => {
+              // usar un azul más oscuro para las cards
+              const colorClass = 'bg-blue-900';
+               return (
+                <FadeIn
+                  key={service.id}
+                  direction="up"
+                  delay={index * 0.1}
+                  className="relative bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                >
+                  {/* diagonal accent overlay (aparece al hover de la card) */}
+                  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                    <div className={`${colorClass} absolute -top-8 -left-6 w-[70%] h-[50%] opacity-0 -rotate-12 transform transition-all duration-500 group-hover:opacity-[0.35] pointer-events-none`} />
+                  </div>
+
+                  <div className="relative h-56 overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      style={service.imagePosition ? { objectPosition: service.imagePosition } : undefined}
+                    />
+                    <div className="absolute inset-0 bg-blue-900 opacity-20 group-hover:opacity-10 transition-opacity" />
+                  </div>
+                  {/* icono superpuesto: mitad sobre la imagen, mitad sobre la card (posicionado fuera del contenedor para no ser recortado) */}
+                  <div className={`absolute left-1/2 top-56 -translate-x-1/2 -translate-y-1/2 z-20`}>
+                    <div className={`${colorClass} w-16 h-16 rounded-full flex items-center justify-center shadow-lg border-4 border-white`}>
                       <service.icon className="text-white" size={32} />
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">{service.title}</h3>
-                  <p className="text-gray-600 text-sm mb-6 leading-relaxed">{service.description}</p>
-                  <div className="flex flex-col gap-3">
-                    <Link
-                      to={`/servicios/${service.slug}`}
-                      className="w-full px-6 py-3 bg-white border border-slate-900 text-slate-900 rounded-md hover:bg-slate-50 transition-all duration-300 font-medium text-sm tracking-wide flex items-center justify-center gap-1 group/btn"
-                    >
-                      Conoce más
-                      <FiChevronRight className="group-hover/btn:translate-x-1 transition-transform" />
-                    </Link>
-                    <button className="w-full px-6 py-3 bg-slate-900 text-white rounded-md hover:bg-slate-800 transition-all duration-300 font-medium text-sm tracking-wide">
-                      Solicitar Cotización
-                    </button>
+
+                  <div className="p-6 text-center">
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">{service.title}</h3>
+                    <p className="text-gray-600 text-sm mb-6 leading-relaxed">{service.description}</p>
+                    <div className="flex flex-col gap-3">
+                      <Link
+                        to={`/servicios/${service.slug}`}
+                        className="w-full px-6 py-3 bg-white border border-slate-900 text-slate-900 rounded-md hover:bg-slate-50 transition-all duration-300 font-medium text-sm tracking-wide flex items-center justify-center gap-1 group/btn"
+                      >
+                        Conoce más
+                        <FiChevronRight className="group-hover/btn:translate-x-1 transition-transform" />
+                      </Link>
+                      <button className="w-full px-6 py-3 bg-slate-900 text-white rounded-md hover:bg-slate-800 transition-all duration-300 font-medium text-sm tracking-wide">
+                        Solicitar Cotización
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </FadeIn>
-            ))}
+                </FadeIn>
+              );
+            })}
           </div>
         </div>
       </section>

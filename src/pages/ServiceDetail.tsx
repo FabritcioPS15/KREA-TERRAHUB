@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { FiHome, FiChevronRight, FiCheckCircle, FiArrowRight } from 'react-icons/fi';
+import { FiHome, FiCheckCircle, FiArrowRight } from 'react-icons/fi';
 import { FaBuilding, FaTools, FaBolt, FaTint, FaProjectDiagram, FaDraftingCompass, FaCampground, FaPaintRoller } from 'react-icons/fa';
 import FadeIn from '../components/FadeIn';
 
@@ -191,14 +191,50 @@ export default function ServiceDetail() {
 
                 <div className="relative z-10 container mx-auto px-6 text-white pt-20">
                     <FadeIn direction="up">
-                        <div className="inline-flex items-center gap-2 text-sm font-medium mb-8 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 backdrop-blur-md">
-                            <Link to="/" className="hover:text-blue-300 transition-colors flex items-center gap-1">
-                                <FiHome size={14} /> Inicio
-                            </Link>
-                            <FiChevronRight className="opacity-50" size={14} />
-                            <Link to="/servicios" className="hover:text-blue-300 transition-colors">Servicios</Link>
-                            <FiChevronRight className="opacity-50" size={14} />
-                            <span className="text-blue-300 underline underline-offset-4 decoration-1">{service.title}</span>
+                        {/* Mobile: Compact Glass Breadcrumb */}
+                        <div className="sm:hidden flex justify-center mb-6">
+                            <nav className="flex items-center p-0.5 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 shadow-lg">
+                                <Link 
+                                    to="/" 
+                                    className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-[0.2em] text-white/50"
+                                >
+                                    <div className="w-5 h-5 rounded-md bg-blue-500/10 flex items-center justify-center text-blue-400">
+                                        <FiHome size={11} />
+                                    </div>
+                                    Inicio
+                                </Link>
+                                <div className="h-3 w-[1px] bg-white/10 mx-0.5" />
+                                <Link to="/servicios" className="px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-white transition-colors">
+                                    Servicios
+                                </Link>
+                                <div className="h-3 w-[1px] bg-white/10 mx-0.5" />
+                                <div className="px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.25em] text-white/90 cursor-default truncate max-w-[100px]">
+                                    {service.title}
+                                </div>
+                            </nav>
+                        </div>
+
+                        {/* Desktop: Refined Compact Breadcrumb */}
+                        <div className="hidden sm:flex justify-start mb-8">
+                            <nav className="flex items-center p-0.5 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 shadow-lg group transition-all duration-500 hover:bg-white/10">
+                                <Link 
+                                    to="/" 
+                                    className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-white hover:bg-white/10 transition-all duration-300 group/item"
+                                >
+                                    <div className="w-5 h-5 rounded-md bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover/item:bg-blue-500 group-hover/item:text-white transition-all duration-300">
+                                        <FiHome size={11} />
+                                    </div>
+                                    Inicio
+                                </Link>
+                                <div className="h-3 w-[1px] bg-white/10 mx-0.5" />
+                                <Link to="/servicios" className="px-4 py-1.5 text-[9px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-white transition-colors">
+                                    Servicios
+                                </Link>
+                                <div className="h-3 w-[1px] bg-white/10 mx-0.5" />
+                                <div className="px-4 py-1.5 text-[9px] font-black uppercase tracking-[0.25em] text-white/90 cursor-default">
+                                    {service.title}
+                                </div>
+                            </nav>
                         </div>
 
                         <h1 className="text-4xl md:text-6xl lg:text-[4.5rem] font-bold mb-6 tracking-tight leading-none max-w-4xl drop-shadow-2xl">

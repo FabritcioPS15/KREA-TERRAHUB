@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FiHome, FiChevronRight } from 'react-icons/fi';
+import { FiHome } from 'react-icons/fi';
 import FadeIn from '../components/FadeIn';
 
 export default function Portfolio() {
@@ -15,15 +15,42 @@ export default function Portfolio() {
                 <div className="absolute inset-0 bg-slate-950/60" />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40" />
                 <div className="relative z-10 container mx-auto px-6 text-white text-center">
-                    <div className="mb-6 flex justify-center w-full">
-                        <div className="inline-flex items-center gap-2 text-sm font-medium text-white/90 bg-white/10 border border-white/20 rounded-full px-5 py-2 backdrop-blur-md shadow-sm">
-                            <Link to="/" className="flex items-center gap-2 hover:text-white transition-colors">
-                                <FiHome size={14} />
+                    {/* Mobile: Compact Glass Breadcrumb */}
+                    <div className="sm:hidden flex justify-center mb-6">
+                        <nav className="flex items-center p-0.5 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 shadow-lg">
+                            <Link 
+                                to="/" 
+                                className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-[0.2em] text-white/50"
+                            >
+                                <div className="w-5 h-5 rounded-md bg-blue-500/10 flex items-center justify-center text-blue-400">
+                                    <FiHome size={11} />
+                                </div>
                                 Inicio
                             </Link>
-                            <FiChevronRight className="text-white/50" size={14} />
-                            <span className="text-white">Portafolio</span>
-                        </div>
+                            <div className="h-3 w-[1px] bg-white/10 mx-0.5" />
+                            <div className="px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.25em] text-white/90 cursor-default">
+                                Portafolio
+                            </div>
+                        </nav>
+                    </div>
+
+                    {/* Desktop: Refined Compact Breadcrumb */}
+                    <div className="hidden sm:flex justify-start mb-8">
+                        <nav className="flex items-center p-0.5 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 shadow-lg group transition-all duration-500 hover:bg-white/10">
+                            <Link 
+                                to="/" 
+                                className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-white hover:bg-white/10 transition-all duration-300 group/item"
+                            >
+                                <div className="w-5 h-5 rounded-md bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover/item:bg-blue-500 group-hover/item:text-white transition-all duration-300">
+                                    <FiHome size={11} />
+                                </div>
+                                Inicio
+                            </Link>
+                            <div className="h-3 w-[1px] bg-white/10 mx-0.5" />
+                            <div className="px-4 py-1.5 text-[9px] font-black uppercase tracking-[0.25em] text-white/90 cursor-default">
+                                Portafolio
+                            </div>
+                        </nav>
                     </div>
 
                     <FadeIn direction="up">

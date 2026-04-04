@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FiEye, FiTarget, FiTrendingUp, FiUsers, FiHome, FiChevronRight } from 'react-icons/fi';
+import { FiEye, FiTarget, FiTrendingUp, FiUsers, FiHome } from 'react-icons/fi';
 import FadeIn from '../components/FadeIn';
 
 export default function About() {
@@ -15,15 +15,42 @@ export default function About() {
         <div className="absolute inset-0 bg-slate-950/60" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40" />
         <div className="relative z-10 container mx-auto px-6 text-white">
-          <div className="mb-6 flex justify-center w-full">
-            <div className="inline-flex items-center gap-2 text-sm font-medium text-white/90 bg-white/10 border border-white/20 rounded-full px-5 py-2 backdrop-blur-md shadow-sm">
-              <Link to="/" className="flex items-center gap-2 hover:text-white transition-colors">
-                <FiHome size={14} />
+          {/* Mobile: Compact Glass Breadcrumb */}
+          <div className="sm:hidden flex justify-center mb-6">
+            <nav className="flex items-center p-0.5 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 shadow-lg">
+              <Link 
+                to="/" 
+                className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-[0.2em] text-white/50"
+              >
+                <div className="w-5 h-5 rounded-md bg-blue-500/10 flex items-center justify-center text-blue-400">
+                  <FiHome size={11} />
+                </div>
                 Inicio
               </Link>
-              <FiChevronRight className="text-white/50" size={14} />
-              <span className="text-white">Nosotros</span>
-            </div>
+              <div className="h-3 w-[1px] bg-white/10 mx-0.5" />
+              <div className="px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.25em] text-white/90 cursor-default">
+                Nosotros
+              </div>
+            </nav>
+          </div>
+
+          {/* Desktop: Refined Compact Breadcrumb */}
+          <div className="hidden sm:flex justify-start mb-8">
+            <nav className="flex items-center p-0.5 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 shadow-lg group transition-all duration-500 hover:bg-white/10">
+              <Link 
+                to="/" 
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-white hover:bg-white/10 transition-all duration-300 group/item"
+              >
+                <div className="w-5 h-5 rounded-md bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover/item:bg-blue-500 group-hover/item:text-white transition-all duration-300">
+                  <FiHome size={11} />
+                </div>
+                Inicio
+              </Link>
+              <div className="h-3 w-[1px] bg-white/10 mx-0.5" />
+              <div className="px-4 py-1.5 text-[9px] font-black uppercase tracking-[0.25em] text-white/90 cursor-default">
+                Nosotros
+              </div>
+            </nav>
           </div>
 
           <FadeIn direction="up" delay={0.2} className="text-center px-4">
@@ -43,32 +70,74 @@ export default function About() {
             </FadeIn>
 
             <div className="grid md:grid-cols-2 gap-8 mb-20">
-              <FadeIn direction="left" delay={0.1} className="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 flex flex-col h-full transform transition-all hover:shadow-xl hover:-translate-y-1">
-                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-8">
-                  <FiTarget className="text-blue-900" size={32} />
+              {/* MISIÓN */}
+              <FadeIn direction="left" delay={0.1}>
+                <div className="relative bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 flex flex-col h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 group">
+                  {/* Gradient top bar */}
+                  <div className="h-1.5 w-full bg-gradient-to-r from-blue-900 via-blue-600 to-blue-400" />
+                  {/* Decorative blurred circle */}
+                  <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-blue-50 opacity-60 blur-2xl pointer-events-none" />
+                  <div className="absolute bottom-4 left-4 w-24 h-24 rounded-full bg-blue-100/30 blur-xl pointer-events-none" />
+                  {/* Decorative dots grid */}
+                  <div className="absolute top-6 right-6 grid grid-cols-3 gap-1 opacity-20 pointer-events-none">
+                    {[...Array(9)].map((_, i) => (
+                      <div key={i} className="w-1 h-1 rounded-full bg-blue-900" />
+                    ))}
+                  </div>
+
+                  <div className="relative z-10 p-10 flex flex-col flex-1">
+                    {/* Number label */}
+                    <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-blue-400 mb-6">01 — Misión</span>
+                    {/* Icon */}
+                    <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-blue-100 transition-transform duration-300 group-hover:scale-105">
+                      <FiTarget className="text-blue-900" size={26} />
+                    </div>
+                    {/* Title */}
+                    <h3 className="text-2xl font-extrabold text-gray-900 mb-5 tracking-tight uppercase">Misión</h3>
+                    {/* Divider accent */}
+                    <div className="w-10 h-0.5 bg-gradient-to-r from-blue-900 to-blue-400 rounded-full mb-5" />
+                    {/* Quote mark */}
+                    <span className="text-5xl leading-none font-serif text-blue-100 select-none mb-1">"</span>
+                    <p className="text-base text-gray-600 leading-relaxed font-light -mt-3">
+                      Diseñar y ejecutar <span className="text-blue-900 font-semibold">infraestructura de alto valor</span>, garantizando estándares superiores de calidad y acabados de excelencia en cada proyecto, así como comercializar productos agroindustriales bajo criterios de sostenibilidad, eficiencia y alto estándar competitivo.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-6 italic">MISIÓN</h3>
-                <p className="text-lg text-gray-600 leading-relaxed font-light">
-                  Nuestra misión es <span className="text-blue-900 font-medium italic"> diseñar y ejecutar </span>
-                  infraestructura de alto valor, garantizando
-                  estándares superiores de calidad y
-                  acabados de excelencia en cada proyecto,
-                  así como comercializar productos
-                  agroindustriales de origen bajo criterios de
-                  sostenibilidad, eficiencia y alto estándar
-                  competitivo.
-                </p>
               </FadeIn>
 
-              <FadeIn direction="right" delay={0.2} className="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 flex flex-col h-full transform transition-all hover:shadow-xl hover:-translate-y-1">
-                <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-8">
-                  <FiEye className="text-green-700" size={32} />
+              {/* VISIÓN */}
+              <FadeIn direction="right" delay={0.2}>
+                <div className="relative bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 flex flex-col h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 group">
+                  {/* Gradient top bar */}
+                  <div className="h-1.5 w-full bg-gradient-to-r from-green-700 via-green-500 to-emerald-400" />
+                  {/* Decorative blurred circle */}
+                  <div className="absolute -top-10 -left-10 w-40 h-40 rounded-full bg-green-50 opacity-60 blur-2xl pointer-events-none" />
+                  <div className="absolute bottom-4 right-4 w-24 h-24 rounded-full bg-green-100/30 blur-xl pointer-events-none" />
+                  {/* Decorative dots grid */}
+                  <div className="absolute top-6 right-6 grid grid-cols-3 gap-1 opacity-20 pointer-events-none">
+                    {[...Array(9)].map((_, i) => (
+                      <div key={i} className="w-1 h-1 rounded-full bg-green-700" />
+                    ))}
+                  </div>
+
+                  <div className="relative z-10 p-10 flex flex-col flex-1">
+                    {/* Number label */}
+                    <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-green-600 mb-6">02 — Visión</span>
+                    {/* Icon */}
+                    <div className="w-14 h-14 bg-gradient-to-br from-green-100 to-emerald-50 rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-green-100 transition-transform duration-300 group-hover:scale-105">
+                      <FiEye className="text-green-700" size={26} />
+                    </div>
+                    {/* Title */}
+                    <h3 className="text-2xl font-extrabold text-gray-900 mb-5 tracking-tight uppercase">Visión</h3>
+                    {/* Divider accent */}
+                    <div className="w-10 h-0.5 bg-gradient-to-r from-green-700 to-emerald-400 rounded-full mb-5" />
+                    {/* Quote mark */}
+                    <span className="text-5xl leading-none font-serif text-green-100 select-none mb-1">"</span>
+                    <p className="text-base text-gray-600 leading-relaxed font-light -mt-3">
+                      Ser el hub empresarial referente en Perú en <span className="text-green-700 font-semibold">infraestructura y agroindustria</span>, reconocido como socio estratégico clave en proyectos de gran envergadura y en agroexportación de calidad mundial.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-6 italic">VISIÓN</h3>
-                <p className="text-lg text-gray-600 leading-relaxed font-light">
-                  Ser el hub empresarial referente en Perú en<span className="text-green-700 font-medium italic"> infraestructura y agroindustria,</span> reconocido como socio estratégico clave en proyectos de
-                  gran envergadura y en agroexportación de calidad mundial.
-                </p>
               </FadeIn>
             </div>
 

@@ -57,15 +57,42 @@ export default function Contact() {
         </div>
 
         <div className="relative z-10 container mx-auto px-6 text-white text-center">
-          <div className="mb-8 flex justify-center">
-            <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold text-white/70 bg-white/5 border border-white/10 rounded-full px-6 py-2.5 backdrop-blur-md shadow-2xl">
-              <Link to="/" className="flex items-center gap-2 hover:text-white transition-colors group">
-                <FiHome size={12} className="group-hover:scale-110 transition-transform" />
+          {/* Mobile: Compact Glass Breadcrumb */}
+          <div className="sm:hidden flex justify-center mb-6">
+            <nav className="flex items-center p-0.5 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 shadow-lg">
+              <Link 
+                to="/" 
+                className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-[0.2em] text-white/50"
+              >
+                <div className="w-5 h-5 rounded-md bg-blue-500/10 flex items-center justify-center text-blue-400">
+                  <FiHome size={11} />
+                </div>
                 Inicio
               </Link>
-              <FiChevronRight className="text-white/30" size={12} />
-              <span className="text-blue-400">Contacto</span>
-            </div>
+              <div className="h-3 w-[1px] bg-white/10 mx-0.5" />
+              <div className="px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.25em] text-white/90 cursor-default">
+                Contacto
+              </div>
+            </nav>
+          </div>
+
+          {/* Desktop: Refined Compact Breadcrumb */}
+          <div className="hidden sm:flex justify-start mb-8">
+            <nav className="flex items-center p-0.5 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 shadow-lg group transition-all duration-500 hover:bg-white/10">
+              <Link 
+                to="/" 
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-white hover:bg-white/10 transition-all duration-300 group/item"
+              >
+                <div className="w-5 h-5 rounded-md bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover/item:bg-blue-500 group-hover/item:text-white transition-all duration-300">
+                  <FiHome size={11} />
+                </div>
+                Inicio
+              </Link>
+              <div className="h-3 w-[1px] bg-white/10 mx-0.5" />
+              <div className="px-4 py-1.5 text-[9px] font-black uppercase tracking-[0.25em] text-white/90 cursor-default">
+                Contacto
+              </div>
+            </nav>
           </div>
 
           <FadeIn direction="up" delay={0.2} className="max-w-4xl mx-auto">
@@ -85,8 +112,8 @@ export default function Contact() {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12">
-              <FadeIn direction="right" delay={0.2} className="bg-white rounded-3xl border border-blue-100/50 shadow-[0_20px_50px_rgba(30,58,138,0.05)] p-8 md:p-10">
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+              <FadeIn direction="right" delay={0.2} className="lg:col-span-7 xl:col-span-8 bg-white rounded-3xl border border-blue-100/50 shadow-[0_20px_50px_rgba(30,58,138,0.05)] p-8 md:p-10">
                 <div className="mb-10">
                   <h2 className="text-3xl font-bold text-slate-900 tracking-tight mb-3">Envíanos un <span className="text-blue-600">Mensaje</span></h2>
                   <p className="text-slate-500 font-medium">
@@ -209,7 +236,7 @@ export default function Contact() {
                 </form>
               </FadeIn>
 
-              <div className="space-y-8">
+              <div className="lg:col-span-5 xl:col-span-4 space-y-8">
                 <FadeIn direction="left" delay={0.4} className="bg-slate-900 rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden group">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 blur-3xl rounded-full group-hover:bg-blue-500/20 transition-colors" />
 

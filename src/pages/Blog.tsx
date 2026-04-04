@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiBookOpen, FiCalendar, FiChevronRight, FiClock, FiHome, FiSearch, FiTag } from 'react-icons/fi';
+import { FiArrowRight, FiBookOpen, FiCalendar, FiClock, FiHome, FiSearch, FiTag } from 'react-icons/fi';
 import FadeIn from '../components/FadeIn';
 
 export default function Blog() {
@@ -203,25 +203,42 @@ export default function Blog() {
                 <div className="relative z-10 container mx-auto px-6 text-white">
                     <FadeIn direction="up" delay={0.1}>
                         <div className="mb-6 w-full">
-                            <Link
-                                to="/"
-                                className="sm:hidden inline-flex items-center gap-1.5 text-xs font-semibold text-white/70 hover:text-white bg-white/10 border border-white/15 rounded-lg px-3 py-1.5 backdrop-blur-md transition-all duration-200 hover:bg-white/15"
-                            >
-                                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                                </svg>
-                                Inicio
-                            </Link>
-
-                            <div className="hidden sm:flex justify-center">
-                                <div className="inline-flex items-center gap-2 text-sm font-medium text-white/90 bg-white/10 border border-white/20 rounded-full px-5 py-2 backdrop-blur-md shadow-sm">
-                                    <Link to="/" className="flex items-center gap-2 hover:text-white transition-colors">
-                                        <FiHome size={14} />
+                            {/* Mobile: Compact Glass Breadcrumb */}
+                            <div className="sm:hidden flex justify-center mb-6">
+                                <nav className="flex items-center p-0.5 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 shadow-lg">
+                                    <Link 
+                                        to="/" 
+                                        className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-[0.2em] text-white/50"
+                                    >
+                                        <div className="w-5 h-5 rounded-md bg-blue-500/10 flex items-center justify-center text-blue-400">
+                                            <FiHome size={11} />
+                                        </div>
                                         Inicio
                                     </Link>
-                                    <FiChevronRight className="text-white/50" size={14} />
-                                    <span className="text-white">Blog</span>
-                                </div>
+                                    <div className="h-3 w-[1px] bg-white/10 mx-0.5" />
+                                    <div className="px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.25em] text-white/90 cursor-default">
+                                        Blog
+                                    </div>
+                                </nav>
+                            </div>
+
+                            {/* Desktop: Refined Compact Breadcrumb */}
+                            <div className="hidden sm:flex justify-start mb-8">
+                                <nav className="flex items-center p-0.5 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10 shadow-lg group transition-all duration-500 hover:bg-white/10">
+                                    <Link 
+                                        to="/" 
+                                        className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-white hover:bg-white/10 transition-all duration-300 group/item"
+                                    >
+                                        <div className="w-5 h-5 rounded-md bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover/item:bg-blue-500 group-hover/item:text-white transition-all duration-300">
+                                            <FiHome size={11} />
+                                        </div>
+                                        Inicio
+                                    </Link>
+                                    <div className="h-3 w-[1px] bg-white/10 mx-0.5" />
+                                    <div className="px-4 py-1.5 text-[9px] font-black uppercase tracking-[0.25em] text-white/90 cursor-default">
+                                        Blog
+                                    </div>
+                                </nav>
                             </div>
                         </div>
                     </FadeIn>

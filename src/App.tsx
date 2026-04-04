@@ -2,7 +2,7 @@ import { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
+import ContactWidget from './components/ContactWidget';
 
 // Carga perezosa (Lazy Loading) de páginas para mejorar la velocidad inicial
 const Home = lazy(() => import('./pages/Home'));
@@ -56,7 +56,7 @@ function App() {
           </Suspense>
         </main>
         <Footer />
-        <WhatsAppButton />
+        <ContactWidget />
       </div>
     </Router>
   );

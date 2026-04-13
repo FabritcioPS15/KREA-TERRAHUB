@@ -25,13 +25,11 @@ export default function Footer() {
                   className="h-20 w-auto object-contain brightness-0 invert transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
-                <div className="flex flex-col">
-                  <span className="font-black text-3xl tracking-tighter text-white uppercase leading-none">K&T HUB</span>
-                  <span className="text-[9px] text-white/30 font-bold tracking-[0.4em] uppercase mt-1.5">Excellence Strategic Hub</span>
-                </div>
               </Link>
               <p className={`text-white/40 text-sm leading-relaxed text-pretty font-medium mb-8 ${isHomePage ? 'max-w-2xl mx-auto' : 'max-w-sm'}`}>
-                Somos una empresa estratégicamente integrada que fusiona la excelencia técnica en infraestructura de <span className="text-blue-400 font-bold">KREA</span> con la pureza agroindustrial de <span className="text-green-400 font-bold">TERRA</span>.
+Somos un HUB empresarial que integra y desarrolla negocios en diversos 
+sectores, impulsando soluciones estratégicas con enfoque en innovación, 
+eficiencia y crecimiento sostenible.
               </p>
               <div className={`flex items-center gap-5 ${isHomePage ? 'justify-center' : ''}`}>
                 {[

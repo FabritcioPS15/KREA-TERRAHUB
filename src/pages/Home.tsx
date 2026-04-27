@@ -32,7 +32,7 @@ export default function Home() {
               href="#unidades-negocio"
               className="group flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-full font-black text-[10px] uppercase tracking-[0.2em] transition-all duration-700 shadow-2xl bg-blue-800 hover:bg-blue-700 text-white"
             >
-              Unidades de Negocio
+              Conocenos
               <FiArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
             </a>
           </div>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FiHome, FiChevronRight } from 'react-icons/fi';
 import FadeIn from '../components/FadeIn';
 import Counter from '../components/Counter';
+import SEO from '../components/SEO';
 
 const services = [
   {
@@ -85,6 +86,12 @@ const services = [
 export default function Services() {
   return (
     <div className="min-h-screen pt-12">
+      <SEO 
+        title="Servicios de Construcción e Ingeniería"
+        description="Ofrecemos soluciones integrales de construcción: drywall, melamina, instalaciones eléctricas, gasfitería, acabados y proyectos civiles de alta calidad en Perú."
+        keywords="servicios de construcción, drywall, melamina, instalaciones eléctricas, gasfitería, acabados, arquitectura interior, campamentos mineros"
+        canonical="/servicios"
+      />
       <section
         className="relative py-20 bg-cover bg-center"
         style={{

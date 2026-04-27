@@ -1,4 +1,4 @@
-import { FiArrowRight, FiTarget, FiEye, FiCheckCircle, FiShield, FiUsers, FiAward, FiLayers, FiMap, FiHeart, FiZap, FiLink, FiGlobe, FiTrendingUp } from 'react-icons/fi';
+import { FiArrowRight, FiTarget, FiEye, FiCheckCircle, FiUsers, FiAward, FiLayers, FiMap, FiHeart, FiZap, FiLink, FiGlobe, FiTrendingUp } from 'react-icons/fi';
 import FadeIn from '../components/FadeIn';
 
 export default function Home() {
@@ -8,14 +8,14 @@ export default function Home() {
       {/* HERO SECTION SIMPLE */}
       <section className="relative h-screen overflow-hidden bg-slate-950">
         {/* Imagen de fondo */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url(/assets/images/ImagenKT.svg)' }}
         />
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/40 to-black/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-        
+
         {/* Contenido del Hero */}
         <div className="absolute inset-0 container mx-auto px-6 flex items-center pt-20">
           <div className="max-w-3xl">
@@ -28,7 +28,7 @@ export default function Home() {
             <p className="text-sm md:text-lg lg:text-xl text-white/50 mb-8 leading-relaxed font-light max-w-xl">
               Somos un HUB empresarial que integra y desarrolla soluciones en diversos sectores, generando valor sostenible y crecimiento continuo.
             </p>
-            <a 
+            <a
               href="#unidades-negocio"
               className="group flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-full font-black text-[10px] uppercase tracking-[0.2em] transition-all duration-700 shadow-2xl bg-blue-800 hover:bg-blue-700 text-white"
             >
@@ -87,9 +87,9 @@ export default function Home() {
             <div className="w-full lg:w-1/2 relative">
               <FadeIn direction="left" delay={0.2}>
                 <div className="relative rounded-[2rem] overflow-hidden shadow-2xl group">
-                  <img 
-                    src="/assets/images/Imagen2.jpeg" 
-                    alt="Equipo Krea & Terra Hub" 
+                  <img
+                    src="/assets/images/Imagen2.jpeg"
+                    alt="Equipo Krea & Terra Hub"
                     className="w-full h-[500px] object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-950/40 to-transparent" />
@@ -150,7 +150,7 @@ export default function Home() {
               <p className="text-slate-500 text-lg">La base de todas nuestras operaciones y el compromiso con nuestra excelencia.</p>
             </FadeIn>
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6 overflow-x-auto lg:overflow-visible snap-x snap-mandatory lg:snap-none pb-4 lg:pb-0 scrollbar-hide">
             {[
               { icon: FiCheckCircle, title: "Integridad", desc: "Actuamos con honestidad y transparencia en cada proyecto.", color: "text-blue-600", bg: "bg-blue-50" },
@@ -181,7 +181,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-black text-slate-900">Unidades de Negocio</h2>
           </FadeIn>
         </div>
-        
+
         <div className="grid lg:grid-cols-2 gap-0 overflow-hidden rounded-[3rem] mx-6 shadow-2xl border border-slate-100">
           {/* INFRIX */}
           <div className="relative group overflow-hidden bg-blue-900 py-32 px-12 md:px-20 text-white min-h-[500px] flex items-center">
@@ -193,7 +193,7 @@ export default function Home() {
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-blue-950 to-transparent" />
-            
+
             <div className="relative z-10 w-full">
               <FadeIn direction="right">
                 <span className="text-blue-400 font-black tracking-[0.3em] text-[10px] uppercase mb-4 block">NGENIERÍA & CONSTRUCCIÓN</span>
@@ -224,7 +224,7 @@ export default function Home() {
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-l from-green-950 to-transparent" />
-            
+
             <div className="relative z-10 w-full text-right flex flex-col items-end">
               <FadeIn direction="left">
                 <span className="text-green-400 font-black tracking-[0.3em] text-[10px] uppercase mb-4 block text-right">Agroindustria & Exportación</span>

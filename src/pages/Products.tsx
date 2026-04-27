@@ -2,6 +2,7 @@ import { FiAward, FiHeart, FiHome, FiDownload, FiCalendar } from 'react-icons/fi
 import { FaLeaf, FaCoffee, FaSeedling, FaAppleAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import FadeIn from '../components/FadeIn';
+import SEO from '../components/SEO';
 
 const products = [
   {
@@ -37,6 +38,12 @@ const products = [
 export default function Products() {
   return (
     <div className="min-h-screen pt-12">
+      <SEO 
+        title="Productos Agroindustriales de Origen"
+        description="Descubre nuestros productos agroindustriales de alta calidad: cacao de origen, café verde, harina de maca y frutas deshidratadas con certificación orgánica."
+        keywords="agroindustria, cacao orgánico, café verde, maca gelatinizada, frutas deshidratadas, productos naturales, exportación Perú"
+        canonical="/productos"
+      />
       <section
         className="relative py-20 bg-cover bg-center"
         style={{

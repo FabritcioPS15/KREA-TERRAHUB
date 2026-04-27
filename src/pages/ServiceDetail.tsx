@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { FiHome, FiCheckCircle, FiArrowRight } from 'react-icons/fi';
 import { FaBuilding, FaTools, FaBolt, FaTint, FaProjectDiagram, FaDraftingCompass, FaCampground, FaPaintRoller } from 'react-icons/fa';
 import FadeIn from '../components/FadeIn';
+import SEO from '../components/SEO';
 
 const serviceData: Record<string, any> = {
     'drywall-estructuras': {
@@ -180,6 +181,12 @@ export default function ServiceDetail() {
 
     return (
         <div className="min-h-screen bg-white">
+            <SEO 
+                title={service.title}
+                description={service.description}
+                keywords={`${service.title}, Krea & Terra Hub, construcción, ingeniería, ${service.title.toLowerCase()} Perú`}
+                canonical={`/servicios/${slug}`}
+            />
             {/* Hero Section */}
             <section className="relative h-[60vh] min-h-[400px] flex items-center overflow-hidden">
                 <div

@@ -1,10 +1,17 @@
 import { Link } from 'react-router-dom';
 import { FiEye, FiTarget, FiTrendingUp, FiUsers, FiHome } from 'react-icons/fi';
 import FadeIn from '../components/FadeIn';
+import SEO from '../components/SEO';
 
 export default function About() {
   return (
     <div className="min-h-screen pt-12">
+      <SEO 
+        title="Sobre Nosotros"
+        description="Conoce la misión y visión de Krea & Terra Hub, un ecosistema empresarial que integra ingeniería, construcción y agroindustria en Perú."
+        keywords="Krea & Terra Hub, misión, visión, hub empresarial, construcción sostenible, agroindustria Perú"
+        canonical="/nosotros"
+      />
       <section
         className="relative py-20 bg-cover bg-center"
         style={{

@@ -3,6 +3,7 @@ import { FiMail, FiMapPin, FiPhone, FiSend, FiHome, FiChevronRight, FiUsers } fr
 import { Link } from 'react-router-dom';
 import FadeIn from '../components/FadeIn';
 import FAQAccordion from '../components/FAQAccordion';
+import SEO from '../components/SEO';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -41,6 +42,12 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen pt-12">
+      <SEO 
+        title="Contacto"
+        description="Contáctanos para soluciones constructivas o productos agroindustriales en Perú. Estamos listos para materializar tus proyectos con excelencia."
+        keywords="contacto, Krea & Terra Hub, construcción Perú, agroindustria, servicios de ingeniería"
+        canonical="/contacto"
+      />
       <section
         className="relative py-28 bg-cover bg-center overflow-hidden"
         style={{

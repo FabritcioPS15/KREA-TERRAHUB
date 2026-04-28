@@ -30,10 +30,16 @@ export default function Home() {
             </p>
             <a
               href="#unidades-negocio"
-              className="group flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-full font-black text-[10px] uppercase tracking-[0.2em] transition-all duration-700 shadow-2xl bg-blue-800 hover:bg-blue-700 text-white"
+              className="group relative inline-flex items-center gap-4 px-12 py-5 rounded-full bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white font-black text-[12px] md:text-[13px] uppercase tracking-[0.3em] transition-all duration-500 hover:shadow-[0_20px_50px_-10px_rgba(37,99,235,0.5)] hover:-translate-y-1 active:scale-95 overflow-hidden border border-white/20"
             >
-              Conocenos
-              <FiArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+              <span className="relative z-10">Conócenos</span>
+              <FiArrowRight size={20} className="relative z-10 group-hover:translate-x-2 transition-transform duration-500" />
+              
+              {/* Capa de brillo superior */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {/* Efecto de barrido de luz (Shine) */}
+              <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-[200%] group-hover:translate-x-[200%] transition-transform duration-1000 ease-in-out" />
             </a>
           </div>
         </div>
@@ -196,7 +202,7 @@ export default function Home() {
 
             <div className="relative z-10 w-full">
               <FadeIn direction="right">
-                <span className="text-blue-400 font-black tracking-[0.3em] text-[10px] uppercase mb-4 block">NGENIERÍA & CONSTRUCCIÓN</span>
+                <span className="text-blue-400 font-black tracking-[0.3em] text-[10px] uppercase mb-4 block">INGENIERÍA & CONSTRUCCIÓN</span>
                 <h3 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter">INFRIX</h3>
                 <p className="text-white/70 text-lg mb-10 max-w-md leading-relaxed">
                   Excelencia en ingeniería, acabados y desarrollo de proyectos civiles de alto impacto.

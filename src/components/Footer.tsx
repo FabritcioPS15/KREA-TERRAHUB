@@ -8,7 +8,7 @@ export default function Footer() {
   const isHomePage = location.pathname === '/';
   const currentYearValue = new Date().getFullYear();
 
-  const underlineClass = (active: boolean, color: string = 'bg-blue-500') => 
+  const underlineClass = (active: boolean, color: string = 'bg-blue-500') =>
     `absolute bottom-0 left-0 h-0.5 ${color} transition-all duration-500 ease-in-out origin-left ${active ? 'w-full scale-x-100' : 'w-full scale-x-0 group-hover:scale-x-100'}`;
 
   return (
@@ -27,9 +27,9 @@ export default function Footer() {
                 />
               </Link>
               <p className={`text-white/40 text-sm leading-relaxed text-pretty font-medium mb-8 ${isHomePage ? 'max-w-2xl mx-auto' : 'max-w-sm'}`}>
-Somos un HUB empresarial que integra y desarrolla negocios en diversos 
-sectores, impulsando soluciones estratégicas con enfoque en innovación, 
-eficiencia y crecimiento sostenible.
+                Somos una HUB empresarial que integra y desarrolla negocios en diversos
+                sectores, impulsando soluciones estratégicas con enfoque en innovación,
+                eficiencia y crecimiento sostenible.
               </p>
               <div className={`flex items-center gap-5 ${isHomePage ? 'justify-center' : ''}`}>
                 {[
@@ -65,8 +65,8 @@ eficiencia y crecimiento sostenible.
                     { name: "Contacto", to: "/contacto" },
                   ].map((link, i) => (
                     <li key={i}>
-                      <NavLink 
-                        to={link.to} 
+                      <NavLink
+                        to={link.to}
                         className={({ isActive }) => `text-white/50 hover:text-white transition-all text-sm font-medium flex items-center relative group py-0.5 ${isActive ? 'text-white' : ''}`}
                       >
                         {({ isActive }) => (
@@ -93,7 +93,7 @@ eficiencia y crecimiento sostenible.
                     <span className="text-[9px] text-blue-400/40 uppercase font-black tracking-widest">Escríbenos</span>
                     <a href="mailto:proyectos@kt-hub.com" className="text-sm font-bold text-white/70 hover:text-white transition-colors">proyectos@kt-hub.com</a>
                   </div>
-                  
+
                   <div className="flex flex-col gap-0.5">
                     <span className="text-[9px] text-green-400/40 uppercase font-black tracking-widest">Llámanos</span>
                     <a href="tel:+51921820630" className="text-sm font-bold text-white/70 hover:text-white transition-colors">+51 921 820 630</a>

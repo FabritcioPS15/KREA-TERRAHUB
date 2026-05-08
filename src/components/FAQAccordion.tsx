@@ -10,7 +10,7 @@ const ITEMS = [
     {
         title: '¿Qué es el hub empresarial KREA & TERRA?',
         content:
-            'Somos un hub innovador que conecta el sector de la construcción estructurada con acabados de primera (KREA) y la agroindustria enfocada en productos sostenibles de origen (TERRA), brindando soluciones de alta calidad en ambos rubros.',
+            'Somos una hub innovador que conecta el sector de la construcción estructurada con acabados de primera (KREA) y la agroindustria enfocada en productos sostenibles de origen (TERRA), brindando soluciones de alta calidad en ambos rubros.',
     },
     {
         title: '¿Ofrecen servicios de construcción a nivel corporativo?',

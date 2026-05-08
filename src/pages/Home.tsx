@@ -26,7 +26,7 @@ export default function Home() {
               KREA & TERRA HUB
             </h1>
             <p className="text-sm md:text-lg lg:text-xl text-white/50 mb-8 leading-relaxed font-light max-w-xl">
-              Somos un HUB empresarial que integra y desarrolla soluciones en diversos sectores, generando valor sostenible y crecimiento continuo.
+              Somos una HUB empresarial que integra y desarrolla soluciones en diversos sectores, generando valor sostenible y crecimiento continuo.
             </p>
             <a
               href="#unidades-negocio"
@@ -34,10 +34,10 @@ export default function Home() {
             >
               <span className="relative z-10">Conócenos</span>
               <FiArrowRight size={20} className="relative z-10 group-hover:translate-x-2 transition-transform duration-500" />
-              
+
               {/* Capa de brillo superior */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
+
               {/* Efecto de barrido de luz (Shine) */}
               <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-[200%] group-hover:translate-x-[200%] transition-transform duration-1000 ease-in-out" />
             </a>

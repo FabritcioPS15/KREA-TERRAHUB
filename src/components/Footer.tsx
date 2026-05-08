@@ -20,9 +20,9 @@ export default function Footer() {
             <FadeIn direction="up" delay={0.1}>
               <Link to="/" className={`inline-flex flex-col items-center gap-4 mb-6 group ${isHomePage ? 'items-center' : 'items-start'}`}>
                 <img
-                  src="/assets/logo.png"
+                  src="/assets/KREA DORADO.png"
                   alt="KREA & TERRA HUB"
-                  className="h-20 w-auto object-contain brightness-0 invert transition-transform duration-500 group-hover:scale-105"
+                  className="h-28 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
               </Link>

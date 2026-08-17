@@ -188,9 +188,9 @@ export default function Home() {
           </FadeIn>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-0 overflow-hidden rounded-[3rem] mx-6 shadow-2xl border border-slate-100">
+        <div className="grid lg:grid-cols-3 gap-0 overflow-hidden rounded-[3rem] mx-6 shadow-2xl border border-slate-100">
           {/* INFRIX */}
-          <div className="relative group overflow-hidden bg-blue-900 py-32 px-12 md:px-20 text-white min-h-[500px] flex items-center">
+          <div className="relative group overflow-hidden bg-orange-700 py-32 px-12 md:px-20 text-white min-h-[500px] flex items-center">
             {/* Imagen de fondo */}
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 opacity-30 group-hover:opacity-40"
@@ -198,11 +198,11 @@ export default function Home() {
                 backgroundImage: 'url(https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2&fm=webp)',
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-950 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-800 to-transparent" />
 
             <div className="relative z-10 w-full">
               <FadeIn direction="right">
-                <span className="text-blue-400 font-black tracking-[0.3em] text-[10px] uppercase mb-4 block">INGENIERÍA & CONSTRUCCIÓN</span>
+                <span className="text-orange-200 font-black tracking-[0.3em] text-[10px] uppercase mb-4 block">INGENIERÍA & CONSTRUCCIÓN</span>
                 <h3 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter">INFRIX</h3>
                 <p className="text-white/70 text-lg mb-10 max-w-md leading-relaxed">
                   Excelencia en ingeniería, acabados y desarrollo de proyectos civiles de alto impacto.
@@ -211,7 +211,7 @@ export default function Home() {
                   href="https://infrix-web.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-4 px-10 py-4 rounded-full bg-white text-blue-900 hover:bg-blue-50 transition-all duration-500 font-black text-xs uppercase tracking-widest shadow-xl"
+                  className="inline-flex items-center gap-4 px-10 py-4 rounded-full bg-white text-orange-800 hover:bg-orange-100 transition-all duration-500 font-black text-xs uppercase tracking-widest shadow-xl"
                 >
                   Ir a Infrix
                   <FiArrowRight size={18} />
@@ -245,6 +245,37 @@ export default function Home() {
                   className="inline-flex items-center gap-4 px-10 py-4 rounded-full bg-white text-green-900 hover:bg-green-50 transition-all duration-500 font-black text-xs uppercase tracking-widest shadow-xl"
                 >
                   Ir a Intallpa Foods
+                  <FiArrowRight size={18} />
+                </a>
+              </FadeIn>
+            </div>
+          </div>
+
+          {/* MODIRU */}
+          <div className="relative group overflow-hidden bg-amber-900 py-32 px-12 md:px-20 text-white min-h-[500px] flex items-center">
+            {/* Imagen de fondo */}
+            <div
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 opacity-30 group-hover:opacity-40"
+              style={{
+                backgroundImage: 'url(https://images.pexels.com/photos/11035544/pexels-photo-11035544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2&fm=webp)',
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-950 to-transparent" />
+
+            <div className="relative z-10 w-full">
+              <FadeIn direction="right">
+                <span className="text-amber-200 font-black tracking-[0.3em] text-[10px] uppercase mb-4 block">TECNOLOGÍA & INNOVACIÓN</span>
+                <h3 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter">MODIRU</h3>
+                <p className="text-white/70 text-lg mb-10 max-w-md leading-relaxed">
+                  Soluciones tecnológicas innovadoras para transformar y optimizar procesos empresariales.
+                </p>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-4 px-10 py-4 rounded-full bg-white text-amber-800 hover:bg-amber-100 transition-all duration-500 font-black text-xs uppercase tracking-widest shadow-xl"
+                >
+                  Ir a Modiru
                   <FiArrowRight size={18} />
                 </a>
               </FadeIn>

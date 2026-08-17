@@ -15,6 +15,9 @@ const Portfolio = lazy(() => import('./pages/Portfolio'));
 const Blog = lazy(() => import('./pages/Blog'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Terms = lazy(() => import('./pages/Terms'));
+const Infrix = lazy(() => import('./pages/Infrix'));
+const Intallpa = lazy(() => import('./pages/Intallpa'));
+const Modiru = lazy(() => import('./pages/Modiru'));
 
 // Componente de carga simple
 const PageLoader = () => (
@@ -50,6 +53,9 @@ function App() {
               <Route path="/portafolio" element={<Portfolio />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/contacto" element={<Contact />} />
+              <Route path="/infrix" element={<Infrix />} />
+              <Route path="/intallpa" element={<Intallpa />} />
+              <Route path="/modiru" element={<Modiru />} />
               <Route path="/privacidad" element={<Privacy />} />
               <Route path="/terminos" element={<Terms />} />
             </Routes>

@@ -1,4 +1,4 @@
-import { FiArrowRight, FiTarget, FiEye, FiCheckCircle, FiUsers, FiAward, FiLayers, FiMap, FiHeart, FiZap, FiLink, FiGlobe, FiTrendingUp } from 'react-icons/fi';
+import { FiArrowRight, FiTarget, FiEye, FiCheckCircle, FiUsers, FiAward, FiLayers, FiMap, FiHeart, FiZap, FiLink, FiGlobe, FiTrendingUp, FiBriefcase } from 'react-icons/fi';
 import FadeIn from '../components/FadeIn';
 
 export default function Home() {
@@ -208,7 +208,7 @@ export default function Home() {
                   Excelencia en ingeniería, acabados y desarrollo de proyectos civiles de alto impacto.
                 </p>
                 <a
-                  href="https://infrix-web.vercel.app/"
+                  href="https://infrix.kythubx.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-4 px-10 py-4 rounded-full bg-white text-orange-800 hover:bg-orange-100 transition-all duration-500 font-black text-xs uppercase tracking-widest shadow-xl"
@@ -239,7 +239,7 @@ export default function Home() {
                   Cultivando y procesando los mejores productos de la tierra con visión de calidad global.
                 </p>
                 <a
-                  href="https://intallpa-web.vercel.app/"
+                  href="https://intallpa.kythubx.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-4 px-10 py-4 rounded-full bg-white text-green-900 hover:bg-green-50 transition-all duration-500 font-black text-xs uppercase tracking-widest shadow-xl"
@@ -270,7 +270,7 @@ export default function Home() {
                   Soluciones tecnológicas innovadoras para transformar y optimizar procesos empresariales.
                 </p>
                 <a
-                  href="#"
+                  href="https://modiru.kythubx.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-4 px-10 py-4 rounded-full bg-white text-amber-800 hover:bg-amber-100 transition-all duration-500 font-black text-xs uppercase tracking-widest shadow-xl"
@@ -281,6 +281,34 @@ export default function Home() {
               </FadeIn>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* SECCIÓN 5: TRABAJA CON NOSOTROS */}
+      <section className="py-24 bg-slate-950 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-[128px]" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-500 rounded-full blur-[128px]" />
+        </div>
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <FadeIn direction="up">
+            <div className="w-20 h-20 rounded-2xl bg-white/10 flex items-center justify-center mx-auto mb-8">
+              <FiBriefcase size={40} className="text-white" />
+            </div>
+            <span className="text-blue-400 font-black tracking-[0.3em] text-xs uppercase mb-4 block">Únete a Nosotros</span>
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">Trabaja con Nosotros</h2>
+            <p className="text-white/50 text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
+              Forma parte de un equipo que está transformando industrias. Buscamos talento comprometido que comparta nuestra visión de innovación y crecimiento.
+            </p>
+            <a
+              href="mailto:talento@kythubx.com?subject=Postulación%20Krea%20%26%20Terra%20Hub"
+              className="group relative inline-flex items-center gap-4 px-12 py-5 rounded-full bg-gradient-to-br from-white via-white to-slate-200 text-slate-900 font-black text-[12px] md:text-[13px] uppercase tracking-[0.3em] transition-all duration-500 hover:shadow-[0_20px_50px_-10px_rgba(255,255,255,0.3)] hover:-translate-y-1 active:scale-95 overflow-hidden"
+            >
+              <span className="relative z-10">Envía tu CV</span>
+              <FiArrowRight size={20} className="relative z-10 group-hover:translate-x-2 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 -translate-x-[200%] group-hover:translate-x-[200%] transition-transform duration-1000 ease-in-out" />
+            </a>
+          </FadeIn>
         </div>
       </section>
     </div>

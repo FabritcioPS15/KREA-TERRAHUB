@@ -40,12 +40,16 @@ const SEO = ({
       {canonical && <link rel="canonical" href={`${siteUrl}${canonical}`} />}
 
       {/* Open Graph / Facebook */}
+      <meta property="og:type" content="website" />
       <meta property="og:title" content={ogTitle || fullTitle} />
       <meta property="og:description" content={ogDescription || description || defaultDescription} />
       <meta property="og:image" content={ogImage || '/assets/og-image.png'} />
       <meta property="og:url" content={`${siteUrl}${canonical || ''}`} />
+      <meta property="og:site_name" content="Krea & Terra Hub" />
+      <meta property="og:locale" content="es_PE" />
 
       {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={twitterTitle || fullTitle} />
       <meta name="twitter:description" content={twitterDescription || description || defaultDescription} />
       <meta name="twitter:image" content={twitterImage || '/assets/og-image.png'} />

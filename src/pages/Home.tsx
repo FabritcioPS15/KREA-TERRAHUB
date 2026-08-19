@@ -257,17 +257,17 @@ export default function Home() {
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 opacity-30 group-hover:opacity-40"
               style={{
-                backgroundImage: 'url(https://images.pexels.com/photos/11035544/pexels-photo-11035544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2&fm=webp)',
+                backgroundImage: '/assets/images/logodad.jpeg',
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-amber-950 to-transparent" />
 
             <div className="relative z-10 w-full">
               <FadeIn direction="right">
-                <span className="text-amber-200 font-black tracking-[0.3em] text-[10px] uppercase mb-4 block">TECNOLOGÍA & INNOVACIÓN</span>
+                <span className="text-amber-200 font-black tracking-[0.3em] text-[10px] uppercase mb-4 block"> MOBILIRIOS DE MELAMINA </span>
                 <h3 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter">MODIRU</h3>
                 <p className="text-white/70 text-lg mb-10 max-w-md leading-relaxed">
-                  Soluciones tecnológicas innovadoras para transformar y optimizar procesos empresariales.
+                  Diseñamos y transformamos mobiliario de melamina de alta calidad.
                 </p>
                 <a
                   href="https://modiru.kythubx.com/"

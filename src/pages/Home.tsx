@@ -1,5 +1,6 @@
-import { FiArrowRight, FiTarget, FiEye, FiCheckCircle, FiUsers, FiAward, FiLayers, FiMap, FiHeart, FiZap, FiLink, FiGlobe, FiTrendingUp, FiBriefcase } from 'react-icons/fi';
+import { FiArrowRight, FiTarget, FiEye, FiUsers, FiAward, FiLayers, FiMap, FiHeart, FiBriefcase } from 'react-icons/fi';
 import FadeIn from '../components/FadeIn';
+import PrinciplesCarousel from '../components/PrinciplesCarousel';
 
 export default function Home() {
 
@@ -147,7 +148,7 @@ export default function Home() {
       </section>
 
       {/* SECCIÓN 3: PRINCIPIOS */}
-      <section className="py-24">
+      <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <FadeIn direction="up">
@@ -157,25 +158,7 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6 overflow-x-auto lg:overflow-visible snap-x snap-mandatory lg:snap-none pb-4 lg:pb-0 scrollbar-hide">
-            {[
-              { icon: FiCheckCircle, title: "Integridad", desc: "Actuamos con honestidad y transparencia en cada proyecto.", color: "text-blue-600", bg: "bg-blue-50" },
-              { icon: FiZap, title: "Excelencia Operativa", desc: "Buscamos altos estándares en cada negocio, asegurando eficiencia, precisión y resultados confiables.", color: "text-green-600", bg: "bg-green-50" },
-              { icon: FiLink, title: "Integración Estratégica", desc: "Conectamos y articulamos negocios para generar sinergias, optimizar recursos y potenciar resultados.", color: "text-blue-900", bg: "bg-slate-100" },
-              { icon: FiGlobe, title: "Sostenibilidad", desc: "Protegemos el futuro a través de prácticas responsables.", color: "text-green-900", bg: "bg-emerald-50" },
-              { icon: FiTrendingUp, title: "Innovación y Crecimiento", desc: "Impulsamos el desarrollo continuo de nuevos negocios y soluciones con enfoque en crecimiento sostenible.", color: "text-green-900", bg: "bg-emerald-50" },
-            ].map((principio, idx) => (
-              <FadeIn key={idx} direction="up" delay={idx * 0.1}>
-                <div className="p-8 rounded-2xl border border-slate-100 hover:border-blue-200 hover:bg-slate-50/50 transition-all duration-300 text-center snap-center min-w-[280px] sm:min-w-0">
-                  <div className={`w-14 h-14 rounded-xl ${principio.bg} ${principio.color} flex items-center justify-center mx-auto mb-6`}>
-                    <principio.icon size={24} />
-                  </div>
-                  <h4 className="text-xl font-bold text-slate-900 mb-3">{principio.title}</h4>
-                  <p className="text-sm text-slate-500 leading-relaxed">{principio.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
+          <PrinciplesCarousel />
         </div>
       </section>
 

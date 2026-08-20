@@ -247,7 +247,7 @@ export default function Home() {
 
             <div className="relative z-10 w-full">
               <FadeIn direction="right">
-                <span className="text-amber-200 font-black tracking-[0.3em] text-[10px] uppercase mb-4 block"> MOBILIRIOS DE MELAMINA </span>
+                <span className="text-amber-200 font-black tracking-[0.3em] text-[10px] uppercase mb-4 block"> MOBILIARIOS DE MELAMINA </span>
                 <h3 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter">MODIRU</h3>
                 <p className="text-white/70 text-lg mb-10 max-w-md leading-relaxed">
                   Diseñamos y transformamos mobiliario de melamina de alta calidad.
